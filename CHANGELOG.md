@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.1] - 2026-03-18
+
+### Fixed
+
+- User Mode entity now displays correctly on all cloud API versions by reading from data item 29 instead of relying on enhanced GetDeviceStatus query
+
 ## [0.9.0] - 2026-03-18
 
 ### Initial Beta Release
@@ -53,4 +59,5 @@ Custom Home Assistant integration for Systemair HVAC ventilation units via the S
 
 Based on the [Systemair Homey app](https://github.com/balmli/com.systemair) by [balmli](https://github.com/balmli), licensed under GPL-3.0.
 
+[0.9.1]: https://github.com/sirkro/hass-systemair-hvac/releases/tag/v0.9.1
 [0.9.0]: https://github.com/sirkro/hass-systemair-hvac/releases/tag/v0.9.0

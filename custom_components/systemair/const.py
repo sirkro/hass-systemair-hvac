@@ -572,7 +572,8 @@ CLOUD_FUNCTIONS = [
 # accessible via GetDataItems when the correct data item ID is used.
 # Discovered via exhaustive scan of data item IDs 0-2000.
 CLOUD_SENSOR_DATA_ITEMS: dict[int, int] = {
-    # Note: REG_USERMODE_MODE (1161) is read via GetDeviceStatus, not GetDataItems
+    # User mode
+    1161: 29,    # REG_USERMODE_MODE (Active user mode: 0=Auto, 1=Manual, 2=Crowded, etc.)
     # Temperature sensors
     12102: 54,    # REG_SENSOR_OAT (Outdoor Air Temp)
     12103: 53,    # REG_SENSOR_SAT (Supply Air Temp)

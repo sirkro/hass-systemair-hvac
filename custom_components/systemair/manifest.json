@@ -8,5 +8,5 @@
   "iot_class": "cloud_push",
   "issue_tracker": "https://github.com/sirkro/hass-systemair-hvac/issues",
   "requirements": [],
-  "version": "0.9.0"
+  "version": "0.9.1"
 }
