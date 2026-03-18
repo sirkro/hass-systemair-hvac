@@ -1,5 +1,8 @@
 # Systemair HVAC - Home Assistant Integration
 
+[![Validate](https://github.com/sirkro/hass-systemair-hvac/actions/workflows/validate.yaml/badge.svg)](https://github.com/sirkro/hass-systemair-hvac/actions/workflows/validate.yaml)
+[![Tests](https://github.com/sirkro/hass-systemair-hvac/actions/workflows/tests.yaml/badge.svg)](https://github.com/sirkro/hass-systemair-hvac/actions/workflows/tests.yaml)
+
 A custom [Home Assistant](https://www.home-assistant.io/) integration for Systemair HVAC ventilation units via the **Systemair Cloud** (WebSocket + GraphQL).
 
 This integration is based on the [Systemair Homey app](https://github.com/balmli/com.systemair) by [balmli](https://github.com/balmli), ported from TypeScript/JavaScript to Python for Home Assistant.
