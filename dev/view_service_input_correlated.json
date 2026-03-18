@@ -1,0 +1,2271 @@
+{
+  "view": {
+    "id": "/service/input",
+    "title": "VIEWS_SERVICE_INPUT_TITLE",
+    "route": "/service/input",
+    "error": null,
+    "children": [
+      {
+        "type": 2,
+        "feature": null,
+        "properties": {
+          "title": "",
+          "key": "input-tabs",
+          "tabs": [
+            {
+              "title": "VIEWS_SERVICE_INPUT_TABS_ANALOG_TITLE",
+              "key": "analog",
+              "elements": [
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_ANALOG_TITLE",
+                    "key": "analog_1",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 1
+                    },
+                    "route": "service/input/analog_1",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 837,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11000,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_OAT_TITLE",
+                                "shortTitle": "OAT",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_FTP_TITLE",
+                                "shortTitle": "FPT",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_RAT_TITLE",
+                                "shortTitle": "RAT",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EAT_TITLE",
+                                "shortTitle": "EAT",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_ECT_TITLE",
+                                "shortTitle": "ECT",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EFT_TITLE",
+                                "shortTitle": "EFT",
+                                "value": 8
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_input_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 1
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_SENSOR_CORRECTION_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 844,
+                            "defaultValue": 52,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11020,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 99,
+                            "min": -99,
+                            "unit": 5,
+                            "readOnly": false,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 54,
+                            "defaultValue": 197,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 12101,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 800,
+                            "min": -400,
+                            "unit": 5,
+                            "readOnly": true,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "cache": {
+                              "invalidateDataItemsOnWrite": []
+                            },
+                            "value": 82
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_ANALOG_TITLE",
+                    "key": "analog_2",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 2
+                    },
+                    "route": "service/input/analog_2",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 838,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11001,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_SAT_TITLE",
+                                "shortTitle": "SAT",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_FTP_TITLE",
+                                "shortTitle": "FPT",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_RAT_TITLE",
+                                "shortTitle": "RAT",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EAT_TITLE",
+                                "shortTitle": "EAT",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_ECT_TITLE",
+                                "shortTitle": "ECT",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EFT_TITLE",
+                                "shortTitle": "EFT",
+                                "value": 8
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_input_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 2
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_SENSOR_CORRECTION_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 845,
+                            "defaultValue": 52,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11021,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 99,
+                            "min": -99,
+                            "unit": 5,
+                            "readOnly": false,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 53,
+                            "defaultValue": 176,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 12102,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 800,
+                            "min": -400,
+                            "unit": 5,
+                            "readOnly": true,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "cache": {
+                              "invalidateDataItemsOnWrite": []
+                            },
+                            "value": 183
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_ANALOG_TITLE",
+                    "key": "analog_3",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 3
+                    },
+                    "route": "service/input/analog_3",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 839,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11002,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_FTP_TITLE",
+                                "shortTitle": "FPT",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_RAT_TITLE",
+                                "shortTitle": "RAT",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EAT_TITLE",
+                                "shortTitle": "EAT",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_ECT_TITLE",
+                                "shortTitle": "ECT",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EFT_TITLE",
+                                "shortTitle": "EFT",
+                                "value": 8
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_input_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_NOT_SET_TITLE",
+                        "value": "",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_ANALOG_TITLE",
+                    "key": "analog_4",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 4
+                    },
+                    "route": "service/input/analog_4",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 840,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11003,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_OHT_TITLE",
+                                "shortTitle": "OHT",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_FTP_TITLE",
+                                "shortTitle": "FPT",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_RAT_TITLE",
+                                "shortTitle": "RAT",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EAT_TITLE",
+                                "shortTitle": "EAT",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_ECT_TITLE",
+                                "shortTitle": "ECT",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EFT_TITLE",
+                                "shortTitle": "EFT",
+                                "value": 8
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_input_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 3
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_SENSOR_CORRECTION_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 847,
+                            "defaultValue": 52,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11023,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 99,
+                            "min": -99,
+                            "unit": 5,
+                            "readOnly": false,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 60,
+                            "defaultValue": 127,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 12107,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 800,
+                            "min": -400,
+                            "unit": 5,
+                            "readOnly": true,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "value": 175
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_ANALOG_TITLE",
+                    "key": "analog_5",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 5
+                    },
+                    "route": "service/input/analog_5",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 841,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11004,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_FTP_TITLE",
+                                "shortTitle": "FPT",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_RAT_TITLE",
+                                "shortTitle": "RAT",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EAT_TITLE",
+                                "shortTitle": "EAT",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_ECT_TITLE",
+                                "shortTitle": "ECT",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EFT_TITLE",
+                                "shortTitle": "EFT",
+                                "value": 8
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_input_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_NOT_SET_TITLE",
+                        "value": "",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_ANALOG_TITLE",
+                    "key": "analog_6",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 6
+                    },
+                    "route": "service/input/analog_6",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 842,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11005,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_FTP_TITLE",
+                                "shortTitle": "FPT",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_RAT_TITLE",
+                                "shortTitle": "RAT",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EAT_TITLE",
+                                "shortTitle": "EAT",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_ECT_TITLE",
+                                "shortTitle": "ECT",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EFT_TITLE",
+                                "shortTitle": "EFT",
+                                "value": 8
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_input_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_NOT_SET_TITLE",
+                        "value": "",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_ANALOG_TITLE",
+                    "key": "analog_7",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 7
+                    },
+                    "route": "service/input/analog_7",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 843,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11006,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_FTP_TITLE",
+                                "shortTitle": "FPT",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_RAT_TITLE",
+                                "shortTitle": "RAT",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EAT_TITLE",
+                                "shortTitle": "EAT",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_ECT_TITLE",
+                                "shortTitle": "ECT",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_VALUES_EFT_TITLE",
+                                "shortTitle": "EFT",
+                                "value": 8
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_input_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_NOT_SET_TITLE",
+                        "value": "",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "title": "VIEWS_SERVICE_INPUT_TABS_DIGITAL_TITLE",
+              "key": "digital",
+              "elements": [
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_DIGITAL_TITLE",
+                    "key": "digital_1",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 1
+                    },
+                    "route": "service/input/digital_1",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_DIGITAL_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 858,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11400,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_AWAY_TITLE",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_BYS_TITLE",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_VACUUM_CLEANER_TITLE",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_COOKER_TITLE",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CROWDED_TITLE",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EMT_TITLE",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EXT_STOP_TITLE",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EXTRA_ALARM_TITLE",
+                                "value": 8
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FIREPLACE_TITLE",
+                                "value": 9
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_HOLIDAY_TITLE",
+                                "value": 10
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_REFRESH_TITLE",
+                                "value": 11
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_RGS_TITLE",
+                                "value": 12
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FEEDBACK_TITLE",
+                                "value": 13
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FIRE_ALARM_TITLE",
+                                "value": 14
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_ONE_TITLE",
+                                "value": 15
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_TWO_TITLE",
+                                "value": 16
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_THREE_TITLE",
+                                "value": 17
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_PRESSURE_GUARD_TITLE",
+                                "value": 18
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "digital_input_type_group",
+                              "repeatableValues": [
+                                0,
+                                1,
+                                3,
+                                4,
+                                5,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17,
+                                18
+                              ]
+                            },
+                            "value": 12
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_DIGITAL_POLARITY_DESC",
+                        "value": {
+                          "dataItem": {
+                            "id": 860,
+                            "type": 3,
+                            "defaultValue": 1,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11420,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_NORMALLY_OPEN_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_NORMALLY_CLOSED_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": "_OFF",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_DIGITAL_TITLE",
+                    "key": "digital_2",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 2
+                    },
+                    "route": "service/input/digital_2",
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_DIGITAL_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 859,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11401,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_AWAY_TITLE",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_BYS_TITLE",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_VACUUM_CLEANER_TITLE",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_COOKER_TITLE",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CROWDED_TITLE",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EMT_TITLE",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EXT_STOP_TITLE",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EXTRA_ALARM_TITLE",
+                                "value": 8
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FIREPLACE_TITLE",
+                                "value": 9
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_HOLIDAY_TITLE",
+                                "value": 10
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_REFRESH_TITLE",
+                                "value": 11
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FEEDBACK_TITLE",
+                                "value": 13
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FIRE_ALARM_TITLE",
+                                "value": 14
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_ONE_TITLE",
+                                "value": 15
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_TWO_TITLE",
+                                "value": 16
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_THREE_TITLE",
+                                "value": 17
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_PRESSURE_GUARD_TITLE",
+                                "value": 18
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "digital_input_type_group",
+                              "repeatableValues": [
+                                0,
+                                1,
+                                3,
+                                4,
+                                5,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17,
+                                18
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_DIGITAL_NOT_SET_TITLE",
+                        "value": "",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_DIGITAL_POLARITY_DESC",
+                        "value": {
+                          "dataItem": {
+                            "id": 861,
+                            "type": 3,
+                            "defaultValue": 1,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11421,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_NORMALLY_OPEN_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_NORMALLY_CLOSED_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": "_OFF",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_DIGITAL_PRE_ADDRESSED_SAF_TITLE",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": null,
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_DIGITAL_TYPE_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 83,
+                            "defaultValue": 1260,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 12400,
+                              "numberOfRegisters": 1
+                            },
+                            "max": 30000,
+                            "min": 0,
+                            "unit": 10,
+                            "readOnly": true,
+                            "value": 2280
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_DIGITAL_PRE_ADDRESSED_EAF_TITLE",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": null,
+                    "rows": [
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 84,
+                            "defaultValue": 1260,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 12401,
+                              "numberOfRegisters": 1
+                            },
+                            "max": 30000,
+                            "min": 0,
+                            "unit": 10,
+                            "readOnly": true,
+                            "value": 2100
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "title": "VIEWS_SERVICE_INPUT_TABS_UNIVERSAL_TITLE",
+              "key": "universal",
+              "elements": [
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TITLE",
+                    "key": "universal_1",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 1
+                    },
+                    "route": "service/input/universal_1",
+                    "rows": [
+                      {
+                        "title": "_SIGNAL",
+                        "value": {
+                          "dataItem": {
+                            "id": 864,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11100,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_ANALOG_SELECTION",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_SELECTION",
+                                "value": 2
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 2
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "dataItem": {
+                            "id": 882,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11300,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_INACTIVE_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_AWAY_TITLE",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_BYS_TITLE",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_VACUUM_CLEANER_TITLE",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_COOKER_TITLE",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CROWDED_TITLE",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EMT_TITLE",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EXT_STOP_TITLE",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_EXTRA_ALARM_TITLE",
+                                "value": 8
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FIREPLACE_TITLE",
+                                "value": 9
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_HOLIDAY_TITLE",
+                                "value": 10
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_REFRESH_TITLE",
+                                "value": 11
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FEEDBACK_TITLE",
+                                "value": 13
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_FIRE_ALARM_TITLE",
+                                "value": 14
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_ONE_TITLE",
+                                "value": 15
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_TWO_TITLE",
+                                "value": 16
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_CONF_DI_THREE_TITLE",
+                                "value": 17
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_PRESSURE_GUARD_TITLE",
+                                "value": 18
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "digital_input_type_group",
+                              "repeatableValues": [
+                                0,
+                                1,
+                                3,
+                                4,
+                                5,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17,
+                                18
+                              ]
+                            },
+                            "value": 4
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "",
+                        "value": {
+                          "dataItem": {
+                            "id": 888,
+                            "type": 3,
+                            "defaultValue": 1,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11320,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_NORMALLY_OPEN_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_INPUT_DIGITAL_NORMALLY_CLOSED_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": "_OFF",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TITLE",
+                    "key": "universal_2",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 2
+                    },
+                    "route": "service/input/universal_2",
+                    "itemDialog": {
+                      "dataItem": {
+                        "id": 865,
+                        "type": 3,
+                        "defaultValue": 0,
+                        "extension": {
+                          "internalDeviceType": 1,
+                          "modbusRegister": 11101,
+                          "numberOfRegisters": 1
+                        },
+                        "readOnly": false,
+                        "options": [
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                            "value": 0
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_ANALOG_SELECTION",
+                            "value": 1
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_DIGITAL_SELECTION",
+                            "value": 2
+                          }
+                        ],
+                        "exportable": true,
+                        "value": 0
+                      },
+                      "enabled": true
+                    },
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TYPE_DESC",
+                        "value": "",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                        "value": "",
+                        "highlighted": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TITLE",
+                    "key": "universal_3",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 3
+                    },
+                    "route": "service/input/universal_3",
+                    "itemDialog": {
+                      "dataItem": {
+                        "id": 866,
+                        "type": 3,
+                        "defaultValue": 0,
+                        "extension": {
+                          "internalDeviceType": 1,
+                          "modbusRegister": 11102,
+                          "numberOfRegisters": 1
+                        },
+                        "readOnly": false,
+                        "options": [
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                            "value": 0
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_ANALOG_SELECTION",
+                            "value": 1
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_DIGITAL_SELECTION",
+                            "value": 2
+                          }
+                        ],
+                        "exportable": true,
+                        "value": 0
+                      },
+                      "enabled": true
+                    },
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TYPE_DESC",
+                        "value": "",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                        "value": "",
+                        "highlighted": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TITLE",
+                    "key": "universal_4",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 4
+                    },
+                    "route": "service/input/universal_4",
+                    "itemDialog": {
+                      "dataItem": {
+                        "id": 867,
+                        "type": 3,
+                        "defaultValue": 0,
+                        "extension": {
+                          "internalDeviceType": 1,
+                          "modbusRegister": 11103,
+                          "numberOfRegisters": 1
+                        },
+                        "readOnly": false,
+                        "options": [
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                            "value": 0
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_ANALOG_SELECTION",
+                            "value": 1
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_DIGITAL_SELECTION",
+                            "value": 2
+                          }
+                        ],
+                        "exportable": true,
+                        "value": 0
+                      },
+                      "enabled": true
+                    },
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TYPE_DESC",
+                        "value": "",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                        "value": "",
+                        "highlighted": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TITLE",
+                    "key": "universal_5",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 5
+                    },
+                    "route": "service/input/universal_5",
+                    "itemDialog": {
+                      "dataItem": {
+                        "id": 868,
+                        "type": 3,
+                        "defaultValue": 0,
+                        "extension": {
+                          "internalDeviceType": 1,
+                          "modbusRegister": 11104,
+                          "numberOfRegisters": 1
+                        },
+                        "readOnly": false,
+                        "options": [
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                            "value": 0
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_ANALOG_SELECTION",
+                            "value": 1
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_DIGITAL_SELECTION",
+                            "value": 2
+                          }
+                        ],
+                        "exportable": true,
+                        "value": 0
+                      },
+                      "enabled": true
+                    },
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TYPE_DESC",
+                        "value": "",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                        "value": "",
+                        "highlighted": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TITLE",
+                    "key": "universal_6",
+                    "description": "",
+                    "translationVariables": {
+                      "inputNumber": 6
+                    },
+                    "route": "service/input/universal_6",
+                    "itemDialog": {
+                      "dataItem": {
+                        "id": 869,
+                        "type": 3,
+                        "defaultValue": 0,
+                        "extension": {
+                          "internalDeviceType": 1,
+                          "modbusRegister": 11105,
+                          "numberOfRegisters": 1
+                        },
+                        "readOnly": false,
+                        "options": [
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                            "value": 0
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_ANALOG_SELECTION",
+                            "value": 1
+                          },
+                          {
+                            "title": "VIEWS_SERVICE_INPUT_DIGITAL_SELECTION",
+                            "value": 2
+                          }
+                        ],
+                        "exportable": true,
+                        "value": 0
+                      },
+                      "enabled": true
+                    },
+                    "rows": [
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_TYPE_DESC",
+                        "value": "",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_NOT_SET",
+                        "value": "",
+                        "highlighted": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_INBUILT_TEMPERATURE_SENSOR_TITLE",
+                    "key": "inbuilt_temp_sensor",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": "service/input/inb_temp_sensor",
+                    "rows": [
+                      {
+                        "title": "",
+                        "value": "_ENABLED",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE",
+                        "value": "VIEWS_SERVICE_INPUT_UNIVERSAL_INBUILT_TEMPERATURE_SENSOR_DESC",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_SENSOR_CORRECTION_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 95,
+                            "defaultValue": 0,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11503,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 100,
+                            "min": -100,
+                            "unit": 5,
+                            "readOnly": false,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 89,
+                            "defaultValue": 0,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 12543,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "max": 32000,
+                            "min": -32000,
+                            "unit": 5,
+                            "readOnly": true,
+                            "conditionalProperties": [
+                              {
+                                "conditions": [
+                                  {
+                                    "dataItemId": 28,
+                                    "requiredDataItems": {},
+                                    "equalityOperator": true,
+                                    "values": [
+                                      1
+                                    ]
+                                  }
+                                ],
+                                "logic": "and",
+                                "properties": {
+                                  "unit": 6
+                                }
+                              }
+                            ],
+                            "value": 221
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_INBUILT_HUMIDITY_SENSOR_TITLE",
+                    "key": "inbuilt_relative_humidity_sensor",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": "service/input/rh_sensor",
+                    "rows": [
+                      {
+                        "title": "",
+                        "value": "_ENABLED",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE",
+                        "value": "VIEWS_SERVICE_INPUT_UNIVERSAL_INBUILT_HUMIDITY_SENSOR_DESC",
+                        "highlighted": false
+                      },
+                      {
+                        "title": "VIEWS_SERVICE_INPUT_ANALOG_SENSOR_CORRECTION_TITLE",
+                        "value": {
+                          "dataItem": {
+                            "id": 94,
+                            "defaultValue": 0,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 11502,
+                              "numberOfRegisters": 1
+                            },
+                            "max": 9,
+                            "min": -9,
+                            "unit": 8,
+                            "readOnly": false,
+                            "exportable": true,
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 78,
+                            "defaultValue": 0,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 12135,
+                              "numberOfRegisters": 1
+                            },
+                            "max": 32000,
+                            "min": -32000,
+                            "unit": 8,
+                            "readOnly": true,
+                            "value": 59
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_INPUT_UNIVERSAL_PRESSURE_CARD_TITLE",
+                    "key": "pressure_card",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": "service/input/pressure_card",
+                    "rows": [
+                      {
+                        "title": "",
+                        "value": "_DISABLED",
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "monitoring": [
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "1"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "183"
+    },
+    {
+      "register": null,
+      "value": "82"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "175"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "59"
+    },
+    {
+      "register": null,
+      "value": "2280"
+    },
+    {
+      "register": null,
+      "value": "2100"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "221"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "true"
+    },
+    {
+      "register": null,
+      "value": "true"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "-12"
+    },
+    {
+      "register": null,
+      "value": "-12"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "1"
+    },
+    {
+      "register": null,
+      "value": "2"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "3"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "12"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "2"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "4"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    }
+  ]
+}

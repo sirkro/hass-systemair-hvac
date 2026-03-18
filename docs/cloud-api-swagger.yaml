@@ -1,0 +1,1135 @@
+openapi: 3.0.3
+info:
+  title: Systemair HomeSolutions Cloud API
+  version: "1.0"
+  description: |
+    Reverse-engineered API specification for the Systemair HomeSolutions cloud
+    platform (`homesolutions.systemair.com`).  The platform exposes two GraphQL
+    endpoints (Gateway API and Remote API), a WebSocket streaming endpoint, and
+    uses Keycloak OIDC for authentication.
+
+    ## Architecture overview
+
+    | Layer | Base URL | Purpose |
+    |-------|----------|---------|
+    | **SSO (Keycloak)** | `https://sso.systemair.com/auth/realms/iot/protocol/openid-connect` | Authentication (Authorization Code flow) |
+    | **Gateway API** | `https://homesolutions.systemair.com/gateway/api` | Account & device listing (GraphQL) |
+    | **Remote API** | `https://homesolutions.systemair.com/gateway/remote-api` | Device control — read/write registers (GraphQL) |
+    | **WebSocket** | `wss://homesolutions.systemair.com/streaming/` | Real-time push events |
+
+    ## Authentication
+
+    The API uses **Keycloak OIDC Authorization Code** flow.  After obtaining an
+    `access_token`, all GraphQL requests pass it as the `x-access-token` header.
+    Tokens expire after ~300 s and can be refreshed with a `refresh_token`.
+
+    ## Data model
+
+    Device registers are identified by **data item IDs** (integers) in the cloud
+    API.  These map to Modbus registers but are *not* the same numbers.  The
+    mapping is discovered at runtime via `ExportDataItems` (HOLDING registers)
+    and supplemented with a static table of known INPUT register IDs.
+
+    ## Value scaling
+
+    Temperature registers use a scale factor of 10 (raw 215 → 21.5 °C).
+    Boolean registers use `true`/`false` strings in write operations.
+
+  contact:
+    name: Systemair HA Integration
+    url: https://github.com/sirkro/hass-systemair-hvac
+  license:
+    name: GPL-3.0
+    url: https://www.gnu.org/licenses/gpl-3.0.html
+
+servers:
+  - url: https://sso.systemair.com
+    description: Keycloak SSO server
+  - url: https://homesolutions.systemair.com
+    description: HomeSolutions application server
+
+tags:
+  - name: Authentication
+    description: Keycloak OIDC Authorization Code flow
+  - name: Gateway API
+    description: Account-level queries (device listing, broadcast)
+  - name: Remote API
+    description: Device-level queries and mutations (registers, alarms, status)
+  - name: WebSocket
+    description: Real-time push events via WebSocket
+
+# ---------------------------------------------------------------------------
+# Paths
+# ---------------------------------------------------------------------------
+paths:
+
+  # =========================================================================
+  # AUTHENTICATION
+  # =========================================================================
+
+  /auth/realms/iot/protocol/openid-connect/auth:
+    get:
+      tags: [Authentication]
+      operationId: keycloakAuthorize
+      summary: Step 1 — Keycloak authorization page
+      description: |
+        Initiates the OIDC Authorization Code flow.  Returns an HTML login
+        form whose `<form action="…">` URL is extracted by the client.
+
+        **Important:** If the user already has a valid Keycloak session cookie,
+        the server will redirect directly to the `redirect_uri` with a `code`
+        query parameter — in that case Steps 2–3 can be skipped entirely.
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          schema:
+            type: string
+            example: iot-application
+        - name: redirect_uri
+          in: query
+          required: true
+          schema:
+            type: string
+            example: https://homesolutions.systemair.com
+        - name: response_type
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [code]
+        - name: scope
+          in: query
+          required: true
+          schema:
+            type: string
+            example: openid email profile
+      responses:
+        "200":
+          description: |
+            HTML login page.  Extract the `<form action="…">` URL via regex:
+            ```
+            <form\s[^>]*action="([^"]+)"
+            ```
+            Replace any `&amp;` with `&` in the extracted URL.
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /auth/realms/{realm}/login-actions/authenticate:
+    post:
+      tags: [Authentication]
+      operationId: keycloakLogin
+      summary: Step 2 — Submit credentials to Keycloak form
+      description: |
+        POST the user's credentials to the form action URL extracted from
+        Step 1.  The server validates them and issues a redirect chain that
+        ultimately lands on the `redirect_uri` with a `code` query parameter.
+
+        The full URL (including dynamic query parameters like `session_code`,
+        `execution`, `client_id`, `tab_id`) is extracted from Step 1's HTML —
+        only the path is shown here for documentation purposes.
+      parameters:
+        - name: realm
+          in: path
+          required: true
+          schema:
+            type: string
+            example: users
+        - name: session_code
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: execution
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: client_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tab_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: client_data
+          in: query
+          required: false
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username:
+                  type: string
+                  description: User email address
+                password:
+                  type: string
+                  format: password
+                rememberMe:
+                  type: string
+                  enum: ["on"]
+                  default: "on"
+                credentialId:
+                  type: string
+                  default: ""
+      responses:
+        "302":
+          description: |
+            Redirect chain ending at `redirect_uri?code={authorization_code}`.
+
+            **Error indicators in the final URL:**
+            - `error` query param present → authentication failed
+            - Final URL still on `sso.systemair.com` → invalid credentials
+            - No `code` param → unexpected error
+
+  /auth/realms/iot/protocol/openid-connect/token:
+    post:
+      tags: [Authentication]
+      operationId: keycloakToken
+      summary: Step 3 — Exchange code for tokens / Refresh tokens
+      description: |
+        Two grant types are supported:
+
+        1. **`authorization_code`** — exchange the code from Step 2 for an
+           access token and refresh token.
+        2. **`refresh_token`** — obtain a new access token using a previously
+           issued refresh token.
+
+        Access tokens expire after `expires_in` seconds (typically 300).
+        A 30-second safety margin should be subtracted from the expiry.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              oneOf:
+                - $ref: "#/components/schemas/AuthorizationCodeGrant"
+                - $ref: "#/components/schemas/RefreshTokenGrant"
+      responses:
+        "200":
+          description: Token response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenResponse"
+        "400":
+          description: Invalid grant (expired code or refresh token)
+        "401":
+          description: Invalid client credentials
+
+  # =========================================================================
+  # GATEWAY API (GraphQL)
+  # =========================================================================
+
+  /gateway/api:
+    post:
+      tags: [Gateway API]
+      operationId: gatewayGraphQL
+      summary: Gateway API — GraphQL endpoint
+      description: |
+        Account-level GraphQL endpoint for device listing and broadcast
+        triggers.  All requests require the `x-access-token` header.
+
+        **Available operations:**
+        - `GetAccountDevices` (query)
+        - `BroadcastDeviceStatuses` (query — despite being a side-effect operation)
+      security:
+        - accessToken: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GraphQLRequest"
+            examples:
+              GetAccountDevices:
+                summary: List all devices on the account
+                value:
+                  query: |
+                    {
+                      GetAccountDevices {
+                        identifier
+                        name
+                        deviceType { type }
+                        status {
+                          connectionStatus
+                          serialNumber
+                          model
+                          hasAlarms
+                          units { temperature pressure flow }
+                        }
+                      }
+                    }
+                  variables: {}
+              BroadcastDeviceStatuses:
+                summary: Trigger WebSocket push events for specified devices
+                value:
+                  query: |
+                    query BroadcastDeviceStatuses($deviceIds: [String]) {
+                      BroadcastDeviceStatuses(deviceIds: $deviceIds)
+                    }
+                  variables:
+                    deviceIds: ["IAM_24800001239C"]
+      responses:
+        "200":
+          description: GraphQL response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/GetAccountDevicesResponse"
+                  - $ref: "#/components/schemas/BroadcastDeviceStatusesResponse"
+        "401":
+          description: Access token expired or invalid — refresh and retry once
+
+  # =========================================================================
+  # REMOTE API (GraphQL)
+  # =========================================================================
+
+  /gateway/remote-api:
+    post:
+      tags: [Remote API]
+      operationId: remoteGraphQL
+      summary: Remote API — Device-level GraphQL endpoint
+      description: |
+        Device-level GraphQL endpoint for reading/writing registers, fetching
+        status, alarms, and filter information.
+
+        **Required extra headers** (in addition to `x-access-token`):
+        - `device-id` — the device identifier (e.g. `IAM_24800001239C`)
+        - `device-type` — the device type (e.g. `LEGACY`)
+
+        **Available operations:**
+
+        | Operation | Type | Description |
+        |-----------|------|-------------|
+        | `GetDeviceStatus` | query | Basic device status (temperature, airflow, alarms, filter) |
+        | `GetDataItems` | query | Read specific register values by data item ID |
+        | `ExportDataItems` | query | Export all 312 configurable HOLDING registers with Modbus mappings |
+        | `GetActiveAlarms` | query | List currently active alarms |
+        | `GetFilterInformation` | query | Filter selection and item number |
+        | `WriteDataItems` | mutation | Write register values by data item ID |
+      security:
+        - accessToken: []
+      parameters:
+        - $ref: "#/components/parameters/deviceId"
+        - $ref: "#/components/parameters/deviceType"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GraphQLRequest"
+            examples:
+
+              GetDeviceStatus:
+                summary: Get basic device status
+                value:
+                  query: |
+                    {
+                      GetDeviceStatus {
+                        id
+                        connectivity
+                        activeAlarms
+                        temperature
+                        airflow
+                        filterExpiration
+                        serialNumber
+                        model
+                      }
+                    }
+                  variables: {}
+
+              GetDeviceStatusEnhanced:
+                summary: Get enhanced device status (may not be supported)
+                value:
+                  query: |
+                    {
+                      GetDeviceStatus {
+                        id
+                        connectivity
+                        activeAlarms
+                        temperature
+                        airflow
+                        humidity
+                        co2
+                        userMode
+                        filterExpiration
+                        serialNumber
+                        model
+                      }
+                    }
+                  variables: {}
+
+              GetDataItems:
+                summary: Read specific registers by data item ID
+                value:
+                  query: |
+                    query GetDataItems($input: [Int]) {
+                      GetDataItems(input: $input)
+                    }
+                  variables:
+                    input: [53, 54, 60, 78, 83, 84, 89, 1023, 1024]
+
+              ExportDataItems:
+                summary: Export all configurable data items with Modbus mappings
+                value:
+                  query: |
+                    {
+                      ExportDataItems {
+                        version
+                        type
+                        dataItems
+                      }
+                    }
+                  variables: {}
+
+              GetActiveAlarms:
+                summary: List active alarms
+                value:
+                  query: |
+                    {
+                      GetActiveAlarms {
+                        alarms {
+                          title
+                          description
+                          timestamp
+                          stopping
+                          acknowledged
+                        }
+                      }
+                    }
+                  variables: {}
+
+              GetFilterInformation:
+                summary: Get filter information
+                value:
+                  query: |
+                    {
+                      GetFilterInformation {
+                        selectedFilter
+                        itemNumber
+                      }
+                    }
+                  variables: {}
+
+              WriteDataItems:
+                summary: Write register values
+                value:
+                  query: |
+                    mutation WriteDataItems($input: WriteDataItemsInput!) {
+                      WriteDataItems(input: $input)
+                    }
+                  variables:
+                    input:
+                      dataPoints:
+                        - id: 42
+                          value: "215"
+                        - id: 100
+                          value: "true"
+      responses:
+        "200":
+          description: GraphQL response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/GetDeviceStatusResponse"
+                  - $ref: "#/components/schemas/GetDataItemsResponse"
+                  - $ref: "#/components/schemas/ExportDataItemsResponse"
+                  - $ref: "#/components/schemas/GetActiveAlarmsResponse"
+                  - $ref: "#/components/schemas/GetFilterInformationResponse"
+                  - $ref: "#/components/schemas/WriteDataItemsResponse"
+        "401":
+          description: Access token expired or invalid — refresh and retry once
+
+  # =========================================================================
+  # WEBSOCKET (documented as a pseudo-path)
+  # =========================================================================
+
+  /streaming/:
+    get:
+      tags: [WebSocket]
+      operationId: websocketConnect
+      summary: WebSocket — Real-time push events
+      description: |
+        Establishes a WebSocket connection for receiving real-time device
+        status updates.
+
+        **Connection URL:** `wss://homesolutions.systemair.com/streaming/`
+
+        **Authentication:** The access token is passed via WebSocket
+        subprotocols.  The `Sec-WebSocket-Protocol` header must contain:
+        ```
+        accessToken, {access_token_value}
+        ```
+
+        **Post-connection:** Call `BroadcastDeviceStatuses` on the Gateway API
+        to trigger the server to start pushing `DEVICE_STATUS_UPDATE` events.
+
+        **Message format:** JSON text frames.
+
+        ### DEVICE_STATUS_UPDATE event
+
+        ```json
+        {
+          "action": "DEVICE_STATUS_UPDATE",
+          "type": "SYSTEM_EVENT",
+          "properties": {
+            "id": "IAM_24800001239C",
+            "temperature": 17.1,
+            "airflow": 3,
+            "humidity": 49,
+            "co2": 0,
+            "userMode": 1,
+            "airQuality": 0,
+            "temperatures": {
+              "oat": 8.5,
+              "sat": 17.1,
+              "setpoint": 18
+            },
+            "filterExpiration": 19168726,
+            "activeAlarms": false,
+            "versions": [
+              { "type": "mb", "version": "1.22.0" },
+              { "type": "iam", "version": "2.4.0" }
+            ],
+            "update": { "inProgress": false },
+            "configurationWizard": { "active": false },
+            "connectivity": [0, 1, 2],
+            "model": "0",
+            "serialNumber": ""
+          }
+        }
+        ```
+
+        **Note:** Temperature values in WebSocket events are already scaled
+        (e.g. `17.1` not `171`), unlike raw register values from `GetDataItems`.
+
+        Events arrive approximately every 5 seconds while the connection is
+        active and `BroadcastDeviceStatuses` has been called.
+      parameters:
+        - name: Sec-WebSocket-Protocol
+          in: header
+          required: true
+          description: |
+            Two-value subprotocol header: `accessToken, {token}`
+          schema:
+            type: string
+            example: "accessToken, eyJhbGciOiJSUzI1NiIsInR5cCI6..."
+      responses:
+        "101":
+          description: WebSocket upgrade successful
+
+# ---------------------------------------------------------------------------
+# Components
+# ---------------------------------------------------------------------------
+components:
+
+  # -------------------------------------------------------------------------
+  # Security schemes
+  # -------------------------------------------------------------------------
+  securitySchemes:
+    accessToken:
+      type: apiKey
+      in: header
+      name: x-access-token
+      description: Keycloak OIDC access token
+
+  # -------------------------------------------------------------------------
+  # Parameters
+  # -------------------------------------------------------------------------
+  parameters:
+    deviceId:
+      name: device-id
+      in: header
+      required: true
+      description: Device identifier (e.g. `IAM_24800001239C`)
+      schema:
+        type: string
+        example: IAM_24800001239C
+    deviceType:
+      name: device-type
+      in: header
+      required: true
+      description: Device type (e.g. `LEGACY`)
+      schema:
+        type: string
+        example: LEGACY
+
+  # -------------------------------------------------------------------------
+  # Schemas
+  # -------------------------------------------------------------------------
+  schemas:
+
+    # --- Authentication ---
+
+    AuthorizationCodeGrant:
+      type: object
+      required: [grant_type, client_id, redirect_uri, code]
+      properties:
+        grant_type:
+          type: string
+          enum: [authorization_code]
+        client_id:
+          type: string
+          example: iot-application
+        redirect_uri:
+          type: string
+          example: https://homesolutions.systemair.com
+        code:
+          type: string
+          description: Authorization code from the redirect URL
+
+    RefreshTokenGrant:
+      type: object
+      required: [grant_type, client_id, refresh_token]
+      properties:
+        grant_type:
+          type: string
+          enum: [refresh_token]
+        client_id:
+          type: string
+          example: iot-application
+        refresh_token:
+          type: string
+          description: Previously issued refresh token
+
+    TokenResponse:
+      type: object
+      required: [access_token]
+      properties:
+        access_token:
+          type: string
+          description: JWT access token for API calls
+        refresh_token:
+          type: string
+          description: Token for obtaining new access tokens
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds (typically 300)
+          example: 300
+        token_type:
+          type: string
+          example: Bearer
+        scope:
+          type: string
+          example: openid email profile
+
+    # --- GraphQL ---
+
+    GraphQLRequest:
+      type: object
+      required: [query]
+      properties:
+        query:
+          type: string
+          description: GraphQL query or mutation string
+        variables:
+          type: object
+          description: GraphQL variables (empty object `{}` if none)
+          additionalProperties: true
+
+    GraphQLError:
+      type: object
+      properties:
+        message:
+          type: string
+
+    # --- Gateway API responses ---
+
+    GetAccountDevicesResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            GetAccountDevices:
+              type: array
+              items:
+                $ref: "#/components/schemas/AccountDevice"
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphQLError"
+
+    AccountDevice:
+      type: object
+      properties:
+        identifier:
+          type: string
+          description: Unique device ID
+          example: IAM_24800001239C
+        name:
+          type: string
+          description: User-assigned device name
+          example: Heime
+        deviceType:
+          type: object
+          properties:
+            type:
+              type: string
+              description: Device type classification
+              example: LEGACY
+        status:
+          type: object
+          properties:
+            connectionStatus:
+              type: string
+              example: online
+            serialNumber:
+              type: string
+            model:
+              type: string
+              example: SAVE VTR 300
+            hasAlarms:
+              type: boolean
+            units:
+              type: object
+              properties:
+                temperature:
+                  type: string
+                pressure:
+                  type: string
+                flow:
+                  type: string
+
+    BroadcastDeviceStatusesResponse:
+      type: object
+      description: |
+        Triggers the server to push DEVICE_STATUS_UPDATE events over the
+        WebSocket.  **This is a query, not a mutation**, despite having a
+        side effect.
+      properties:
+        data:
+          type: object
+          properties:
+            BroadcastDeviceStatuses:
+              description: Opaque return value (typically Boolean)
+
+    # --- Remote API responses ---
+
+    GetDeviceStatusResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            GetDeviceStatus:
+              $ref: "#/components/schemas/DeviceStatus"
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphQLError"
+
+    DeviceStatus:
+      type: object
+      description: |
+        Basic fields are always available.  Enhanced fields (`humidity`,
+        `co2`, `userMode`) may cause errors on some firmware versions —
+        fall back to the basic query if the response contains
+        `"Cannot query field"` or `"Unknown field"` errors.
+      properties:
+        id:
+          type: string
+        connectivity:
+          description: Connection status
+        activeAlarms:
+          description: Whether any alarms are active
+        temperature:
+          type: number
+          description: Current temperature (already scaled, in °C)
+        airflow:
+          type: integer
+          description: Current airflow level (1-5)
+        humidity:
+          type: number
+          description: Relative humidity % (enhanced field, may not be available)
+        co2:
+          type: integer
+          description: CO2 in ppm (enhanced field, may not be available)
+        userMode:
+          type: integer
+          description: |
+            Active user mode (enhanced field, may not be available).
+
+            | Value | Mode |
+            |-------|------|
+            | 0 | Auto |
+            | 1 | Manual |
+            | 2 | Crowded |
+            | 3 | Refresh |
+            | 4 | Fireplace |
+            | 5 | Away |
+            | 6 | Holiday |
+        filterExpiration:
+          type: integer
+          description: Filter remaining time in seconds
+        serialNumber:
+          type: string
+        model:
+          type: string
+
+    GetDataItemsResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            GetDataItems:
+              description: |
+                `SerializedDataItemOutputType` — may be a JSON array directly
+                or a JSON-encoded string that must be parsed with `JSON.parse()`.
+
+                **Important:** The entire batch fails if any requested data item
+                ID does not exist.  Only request known-valid IDs.
+              oneOf:
+                - type: array
+                  items:
+                    $ref: "#/components/schemas/DataItemValue"
+                - type: string
+                  description: JSON-encoded array of DataItemValue objects
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphQLError"
+
+    DataItemValue:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Data item ID
+          example: 53
+        value:
+          description: |
+            Raw register value.  Type depends on the register:
+            - Integer for most registers
+            - Boolean for on/off registers
+            - Float for some computed values
+
+            **Scaling:** Temperature registers (scale factor 10) return raw
+            values like `215` meaning `21.5 °C`.
+          oneOf:
+            - type: integer
+            - type: number
+            - type: boolean
+            - type: string
+
+    ExportDataItemsResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            ExportDataItems:
+              type: object
+              properties:
+                version:
+                  type: string
+                type:
+                  type: string
+                dataItems:
+                  description: |
+                    Array of configurable data items (312 HOLDING registers).
+                    May be a JSON array or a JSON-encoded string.
+
+                    **Only HOLDING registers** are included — INPUT registers
+                    (sensors, outputs, function active flags) are NOT in this
+                    export but can be read via `GetDataItems` with known IDs.
+                  oneOf:
+                    - type: array
+                      items:
+                        $ref: "#/components/schemas/ExportDataItem"
+                    - type: string
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphQLError"
+
+    ExportDataItem:
+      type: object
+      description: |
+        A single configurable data item from the export.  The Modbus register
+        number is nested under `extension.modbusRegister` and is **0-indexed**
+        (add 1 for the conventional 1-indexed Modbus address).
+      properties:
+        id:
+          type: integer
+          description: Cloud data item ID
+          example: 42
+        extension:
+          type: object
+          properties:
+            modbusRegister:
+              type: integer
+              description: 0-indexed Modbus register number
+              example: 1130
+
+    GetActiveAlarmsResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            GetActiveAlarms:
+              type: object
+              properties:
+                alarms:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Alarm"
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphQLError"
+
+    Alarm:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Filter alarm
+        description:
+          type: string
+          example: Replace filter
+        timestamp:
+          type: string
+        stopping:
+          type: boolean
+          description: Whether this alarm stops the unit
+        acknowledged:
+          type: boolean
+
+    GetFilterInformationResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            GetFilterInformation:
+              type: object
+              properties:
+                selectedFilter:
+                  type: string
+                itemNumber:
+                  type: string
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphQLError"
+
+    WriteDataItemsResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            WriteDataItems:
+              description: Opaque return value
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphQLError"
+
+    WriteDataItemsInput:
+      type: object
+      required: [dataPoints]
+      properties:
+        dataPoints:
+          type: array
+          items:
+            $ref: "#/components/schemas/DataItemWriteInput"
+
+    DataItemWriteInput:
+      type: object
+      required: [id, value]
+      properties:
+        id:
+          type: integer
+          description: Cloud data item ID
+          example: 42
+        value:
+          type: string
+          description: |
+            Value as a string.
+
+            - Booleans: `"true"` or `"false"`
+            - Integers: `"215"` (after applying scale factor)
+            - Temperatures: multiply by 10 first, e.g. 21.5°C → `"215"`
+          example: "215"
+
+    # --- WebSocket ---
+
+    WebSocketDeviceStatusUpdate:
+      type: object
+      description: |
+        Pushed over the WebSocket after `BroadcastDeviceStatuses` is called.
+        Arrives approximately every 5 seconds.
+
+        **Note:** Temperature values are already scaled (°C), unlike raw
+        register values from `GetDataItems`.
+      properties:
+        action:
+          type: string
+          enum: [DEVICE_STATUS_UPDATE]
+        type:
+          type: string
+          enum: [SYSTEM_EVENT]
+        properties:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Device identifier
+              example: IAM_24800001239C
+            temperature:
+              type: number
+              description: Supply air temperature (°C, already scaled)
+              example: 17.1
+            airflow:
+              type: integer
+              description: Airflow level (1-5)
+              example: 3
+            humidity:
+              type: integer
+              description: Relative humidity %
+              example: 49
+            co2:
+              type: integer
+              description: CO2 in ppm
+              example: 0
+            userMode:
+              type: integer
+              description: |
+                Active user mode.
+
+                | Value | Mode |
+                |-------|------|
+                | 0 | Auto |
+                | 1 | Manual |
+                | 2 | Crowded |
+                | 3 | Refresh |
+                | 4 | Fireplace |
+                | 5 | Away |
+                | 6 | Holiday |
+              example: 1
+            airQuality:
+              type: integer
+              description: Air quality index
+              example: 0
+            temperatures:
+              type: object
+              properties:
+                oat:
+                  type: number
+                  description: Outdoor air temperature (°C)
+                  example: 8.5
+                sat:
+                  type: number
+                  description: Supply air temperature (°C)
+                  example: 17.1
+                setpoint:
+                  type: number
+                  description: Temperature setpoint (°C)
+                  example: 18
+            filterExpiration:
+              type: integer
+              description: Filter remaining time in seconds
+              example: 19168726
+            activeAlarms:
+              type: boolean
+              example: false
+            versions:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: mb
+                  version:
+                    type: string
+                    example: "1.22.0"
+            update:
+              type: object
+              properties:
+                inProgress:
+                  type: boolean
+            configurationWizard:
+              type: object
+              properties:
+                active:
+                  type: boolean
+            connectivity:
+              type: array
+              items:
+                type: integer
+              example: [0, 1, 2]
+            model:
+              type: string
+              example: "0"
+            serialNumber:
+              type: string
+
+    # --- Data Item ID to Modbus Register Mapping ---
+
+    DataItemMapping:
+      type: object
+      description: |
+        Reference table of known data item IDs that are NOT in ExportDataItems
+        but are accessible via `GetDataItems`.  These map to INPUT registers.
+
+        ## Sensor registers
+
+        | Data Item ID | Modbus Register (1-indexed) | Description |
+        |---|---|---|
+        | 53 | 12103 | Supply Air Temperature (÷10 for °C) |
+        | 54 | 12102 | Outdoor Air Temperature (÷10 for °C) |
+        | 60 | 12108 | Overheat Temperature (÷10 for °C) |
+        | 78 | 12136 | Humidity (RHS PDM, %) |
+        | 83 | 12401 | Supply Fan RPM |
+        | 84 | 12402 | Extract Fan RPM |
+        | 89 | 12544 | Extract Air Temperature (÷10 for °C) |
+        | 1023 | 14001 | Supply Fan Speed (%) |
+        | 1024 | 14002 | Extract Fan Speed (%) |
+
+        ## Function active registers
+
+        | Data Item ID | Modbus Register (1-indexed) | Description |
+        |---|---|---|
+        | 102 | 3101 | Cooling active |
+        | 103 | 3102 | Free cooling active |
+        | 104 | 3103 | Heating active |
+        | 105 | 3104 | Defrosting active |
+        | 106 | 3105 | Heat recovery active |
+        | 107 | 3106 | Cooling recovery active |
+        | 108 | 3107 | Moisture transfer active |
+        | 109 | 3108 | Secondary air active |
+        | 110 | 3109 | Vacuum cleaner active |
+        | 111 | 3110 | Cooker hood active |
+        | 112 | 3111 | User lock active |
+        | 113 | 3112 | ECO mode active |
+        | 114 | 3113 | Heater cool-down active |
+        | 115 | 3114 | Pressure guard active |
+        | 116 | 3115 | Configurable DI 1 |
+        | 117 | 3116 | Configurable DI 2 |
+        | 118 | 3117 | Configurable DI 3 |
+
+        ## Registers with NO known data item IDs (cloud-unavailable)
+
+        | Modbus Register (1-indexed) | Description |
+        |---|---|
+        | 14101 | Heater analog output (Y1) |
+        | 14201 | Cooler analog output (Y3) |

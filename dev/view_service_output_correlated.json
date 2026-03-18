@@ -1,0 +1,1487 @@
+{
+  "view": {
+    "id": "/service/output",
+    "title": "VIEWS_SERVICE_OUTPUT_TITLE",
+    "route": "/service/output",
+    "error": null,
+    "children": [
+      {
+        "type": 2,
+        "feature": null,
+        "properties": {
+          "title": "",
+          "tabs": [
+            {
+              "title": "VIEWS_SERVICE_INPUT_TABS_ANALOG_TITLE",
+              "key": "analog",
+              "elements": [
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_TITLE",
+                    "key": "analog_1",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 1
+                    },
+                    "route": "service/output/analog_1",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "key": "connection",
+                          "dataItem": {
+                            "id": 1030,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13000,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y2",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y3",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y4",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y1Y3",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_AO",
+                                "value": 6
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 2
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "key": "typeOfValue",
+                          "dataItem": {
+                            "id": 1031,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13500,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1032,
+                            "defaultValue": 10,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 14350,
+                              "numberOfRegisters": 1
+                            },
+                            "decimals": 1,
+                            "increment": 10,
+                            "max": 100,
+                            "min": 0,
+                            "unit": 0,
+                            "readOnly": true,
+                            "value": 56
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_TITLE",
+                    "key": "analog_2",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 2
+                    },
+                    "route": "service/output/analog_2",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "key": "connection",
+                          "dataItem": {
+                            "id": 1034,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13001,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y3",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y4",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y1Y3",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_AO",
+                                "value": 6
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "key": "typeOfValue",
+                          "dataItem": {
+                            "id": 1035,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13501,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_TITLE",
+                    "key": "analog_3",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 3
+                    },
+                    "route": "service/output/analog_3",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "key": "connection",
+                          "dataItem": {
+                            "id": 1038,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13002,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y3",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y4",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y1Y3",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_AO",
+                                "value": 6
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "key": "typeOfValue",
+                          "dataItem": {
+                            "id": 1039,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13502,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_TITLE",
+                    "key": "analog_4",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 4
+                    },
+                    "route": "service/output/analog_4",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "key": "connection",
+                          "dataItem": {
+                            "id": 1042,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13003,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y3",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y4",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y1Y3",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_AO",
+                                "value": 6
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "key": "typeOfValue",
+                          "dataItem": {
+                            "id": 1043,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13503,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_TITLE",
+                    "key": "analog_5",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 5
+                    },
+                    "route": "service/output/analog_5",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "key": "connection",
+                          "dataItem": {
+                            "id": 1046,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13004,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y3",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y4",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y1Y3",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_AO",
+                                "value": 6
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "key": "typeOfValue",
+                          "dataItem": {
+                            "id": 1047,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13504,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_SENSORS_UNIT_ANALOG_OUTPUT_SENSORS_UNIT_OUTPUT_ANALOG_TRIAC_TITLE",
+                    "key": "analog_triac",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": "service/output/analog_triac",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1054,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13200,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_Y1",
+                                "value": 1
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "analog_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 1
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1056,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13509,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1055,
+                            "defaultValue": 10,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 2148,
+                              "numberOfRegisters": 1
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "unit": 7,
+                            "readOnly": false,
+                            "value": 5
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_SENSORS_UNIT_ANALOG_OUTPUT_SENSORS_UNIT_OUTPUT_ANALOG_SAF_TITLE",
+                    "key": "analog_saf",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": "service/output/analog_saf",
+                    "rows": [
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1058,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13600,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1023,
+                            "defaultValue": 10,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 14000,
+                              "numberOfRegisters": 1
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "unit": 7,
+                            "readOnly": true,
+                            "value": 61
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_ANALOG_SENSORS_UNIT_ANALOG_OUTPUT_SENSORS_UNIT_OUTPUT_ANALOG_EAF_TITLE",
+                    "key": "analog_eaf",
+                    "description": "",
+                    "translationVariables": {},
+                    "route": "service/output/analog_eaf",
+                    "rows": [
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1060,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13601,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1024,
+                            "defaultValue": 10,
+                            "type": 2,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 14001,
+                              "numberOfRegisters": 1
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "unit": 7,
+                            "readOnly": true,
+                            "value": 57
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "title": "VIEWS_SERVICE_INPUT_TABS_DIGITAL_TITLE",
+              "key": "digital",
+              "elements": [
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TITLE",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 1
+                    },
+                    "route": "service/output/digital_1",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1062,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13100,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y1STEP",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y2STEP",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y3STEP",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y4STEP",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SUM",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_OEE_DAMPER",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SECAIR",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_COOLSTART",
+                                "value": 8
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_INTERLOCKEXTFAN",
+                                "value": 9
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1HEATING",
+                                "value": 10
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1COOLING",
+                                "value": 11
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1CHANGEOVER",
+                                "value": 12
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1EXTRA",
+                                "value": 13
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_UNITSTATUSOK",
+                                "value": 14
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSUNSCHEDULED",
+                                "value": 15
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSSCHEDULED",
+                                "value": 16
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "digital_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1063,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13505,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TITLE",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 2
+                    },
+                    "route": "service/output/digital_2",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1066,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13101,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y1STEP",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y2STEP",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y3STEP",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y4STEP",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SUM",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_OEE_DAMPER",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SECAIR",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_COOLSTART",
+                                "value": 8
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_INTERLOCKEXTFAN",
+                                "value": 9
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1HEATING",
+                                "value": 10
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1COOLING",
+                                "value": 11
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1CHANGEOVER",
+                                "value": 12
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1EXTRA",
+                                "value": 13
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_UNITSTATUSOK",
+                                "value": 14
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSUNSCHEDULED",
+                                "value": 15
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSSCHEDULED",
+                                "value": 16
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "digital_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1067,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13506,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TITLE",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 3
+                    },
+                    "route": "service/output/digital_3",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1070,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13102,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y1STEP",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y2STEP",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y3STEP",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y4STEP",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SUM",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_OEE_DAMPER",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SECAIR",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_COOLSTART",
+                                "value": 8
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_INTERLOCKEXTFAN",
+                                "value": 9
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1HEATING",
+                                "value": 10
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1COOLING",
+                                "value": 11
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1CHANGEOVER",
+                                "value": 12
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1EXTRA",
+                                "value": 13
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_UNITSTATUSOK",
+                                "value": 14
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSUNSCHEDULED",
+                                "value": 15
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSSCHEDULED",
+                                "value": 16
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "digital_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1071,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13507,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": 3,
+                  "properties": {
+                    "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TITLE",
+                    "description": "",
+                    "translationVariables": {
+                      "outputNumber": 4
+                    },
+                    "route": "service/output/digital_4",
+                    "rows": [
+                      {
+                        "title": "_TYPE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1074,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13103,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_AO_TYPES_INACTIVE",
+                                "value": 0
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y1STEP",
+                                "value": 1
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y2STEP",
+                                "value": 2
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y3STEP",
+                                "value": 3
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_Y4STEP",
+                                "value": 4
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SUM",
+                                "value": 5
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_OEE_DAMPER",
+                                "value": 6
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_SECAIR",
+                                "value": 7
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_COOLSTART",
+                                "value": 8
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_INTERLOCKEXTFAN",
+                                "value": 9
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1HEATING",
+                                "value": 10
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1COOLING",
+                                "value": 11
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1CHANGEOVER",
+                                "value": 12
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_P1EXTRA",
+                                "value": 13
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_UNITSTATUSOK",
+                                "value": 14
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSUNSCHEDULED",
+                                "value": 15
+                              },
+                              {
+                                "title": "VIEWS_SERVICE_OUTPUT_DIGITAL_TYPES_WSSCHEDULED",
+                                "value": 16
+                              }
+                            ],
+                            "exportable": true,
+                            "exclusiveGroup": {
+                              "id": "digital_output_type_group",
+                              "repeatableValues": [
+                                0
+                              ]
+                            },
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      },
+                      {
+                        "title": "_TYPE_OF_VALUE",
+                        "value": {
+                          "dataItem": {
+                            "id": 1075,
+                            "type": 3,
+                            "defaultValue": 0,
+                            "extension": {
+                              "internalDeviceType": 1,
+                              "modbusRegister": 13508,
+                              "numberOfRegisters": 1
+                            },
+                            "readOnly": false,
+                            "options": [
+                              {
+                                "title": "USER_MODES_AUTO_TITLE",
+                                "value": 0
+                              },
+                              {
+                                "title": "USER_MODES_MANUAL_TITLE",
+                                "value": 1
+                              }
+                            ],
+                            "value": 0
+                          },
+                          "enabled": true
+                        },
+                        "highlighted": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "monitoring": [
+    {
+      "register": null,
+      "value": "60"
+    },
+    {
+      "register": null,
+      "value": "57"
+    },
+    {
+      "register": null,
+      "value": "2"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "56"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "1"
+    },
+    {
+      "register": null,
+      "value": "5"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    },
+    {
+      "register": null,
+      "value": "0"
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Systemair HVAC",
+        "description": "Choose how to connect to your Systemair unit.",
+        "data": {
+          "connection_type": "Connection type"
+        }
+      },
+      "modbus": {
+        "title": "Modbus TCP Connection",
+        "description": "Enter the IP address of your Systemair IAM module.",
+        "data": {
+          "ip_address": "IP Address"
+        },
+        "sections": {
+          "advanced": {
+            "name": "Advanced settings",
+            "data": {
+              "port": "Port",
+              "poll_interval": "Poll interval (seconds)"
+            }
+          }
+        }
+      },
+      "saveconnect": {
+        "title": "Save Connect Connection",
+        "description": "Enter the IP address of your Systemair Save Connect unit.",
+        "data": {
+          "ip_address": "IP Address"
+        },
+        "sections": {
+          "advanced": {
+            "name": "Advanced settings",
+            "data": {
+              "port": "Port",
+              "poll_interval": "Poll interval (seconds)"
+            }
+          }
+        }
+      },
+      "cloud": {
+        "title": "Cloud Connection",
+        "description": "Enter your Systemair Home Solutions account credentials.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        },
+        "sections": {
+          "advanced": {
+            "name": "Advanced settings",
+            "data": {
+              "poll_interval": "Poll interval (seconds)",
+              "api_url": "API URL override",
+              "ws_url": "WebSocket URL override"
+            },
+            "data_description": {
+              "api_url": "Leave empty to use the default Systemair cloud API.",
+              "ws_url": "Leave empty to use the default Systemair cloud WebSocket."
+            }
+          }
+        }
+      },
+      "cloud_device": {
+        "title": "Select Device",
+        "description": "Multiple devices found. Select the device to add.",
+        "data": {
+          "machine_id": "Device"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the device.",
+      "invalid_auth": "Invalid email or password.",
+      "no_devices": "No devices found on this account.",
+      "invalid_host": "Invalid hostname or IP address.",
+      "invalid_url": "Invalid URL format."
+    },
+    "abort": {
+      "already_configured": "This device is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Systemair Options",
+        "description": "Configure integration settings.",
+        "data": {
+          "poll_interval": "Poll interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "supply_air_temperature": {
+        "name": "Supply air temperature"
+      },
+      "outdoor_air_temperature": {
+        "name": "Outdoor air temperature"
+      },
+      "extract_air_temperature": {
+        "name": "Extract air temperature"
+      },
+      "overheat_temperature": {
+        "name": "Overheat temperature"
+      },
+      "humidity": {
+        "name": "Humidity"
+      },
+      "co2": {
+        "name": "CO2"
+      },
+      "saf_rpm": {
+        "name": "Supply air fan RPM"
+      },
+      "eaf_rpm": {
+        "name": "Extract air fan RPM"
+      },
+      "saf_speed": {
+        "name": "Supply air fan speed"
+      },
+      "eaf_speed": {
+        "name": "Extract air fan speed"
+      },
+      "filter_days_left": {
+        "name": "Filter days remaining"
+      },
+      "user_mode": {
+        "name": "User mode"
+      },
+      "fan_mode_sensor": {
+        "name": "Fan mode"
+      },
+      "heater_output": {
+        "name": "Heater output"
+      },
+      "cooler_output": {
+        "name": "Cooler output"
+      },
+      "remaining_time": {
+        "name": "Timed mode remaining"
+      },
+      "air_quality": {
+        "name": "Air quality"
+      },
+      "heat_exchanger_type": {
+        "name": "Heat exchanger type"
+      },
+      "heat_exchanger_speed": {
+        "name": "Heat exchanger speed"
+      },
+      "heater_type": {
+        "name": "Heater type"
+      },
+      "heater_position": {
+        "name": "Heater position"
+      }
+    },
+    "binary_sensor": {
+      "heater_active": {
+        "name": "Heater active"
+      },
+      "cooler_active": {
+        "name": "Cooler active"
+      },
+      "alarm_alarm_co2_state": {
+        "name": "Alarm: CO2"
+      },
+      "alarm_alarm_defrosting_state": {
+        "name": "Alarm: Defrosting"
+      },
+      "alarm_alarm_eaf_rpm_state": {
+        "name": "Alarm: Extract air fan RPM"
+      },
+      "alarm_alarm_eat_state": {
+        "name": "Alarm: Extract air temperature"
+      },
+      "alarm_alarm_emt_state": {
+        "name": "Alarm: Frost protection (EMT)"
+      },
+      "alarm_alarm_filter_state": {
+        "name": "Alarm: Filter"
+      },
+      "alarm_alarm_filter_warning_state": {
+        "name": "Alarm: Filter warning"
+      },
+      "alarm_alarm_fire_alarm_state": {
+        "name": "Alarm: Fire alarm"
+      },
+      "alarm_alarm_frost_prot_state": {
+        "name": "Alarm: Frost protection"
+      },
+      "alarm_alarm_low_sat_state": {
+        "name": "Alarm: Low supply air temperature"
+      },
+      "alarm_alarm_manual_mode_state": {
+        "name": "Alarm: Manual mode"
+      },
+      "alarm_alarm_overheat_temperature_state": {
+        "name": "Alarm: Overheat temperature"
+      },
+      "alarm_alarm_pdm_rhs_state": {
+        "name": "Alarm: Rel. humidity sensor malfunction (PDM)"
+      },
+      "alarm_alarm_rgs_state": {
+        "name": "Alarm: Rotation guard (RGS)"
+      },
+      "alarm_alarm_rh_state": {
+        "name": "Alarm: Rel. humidity sensor malfunction (RH)"
+      },
+      "alarm_alarm_rotor_motor_feedback_state": {
+        "name": "Alarm: Rotor motor feedback"
+      },
+      "alarm_alarm_saf_rpm_state": {
+        "name": "Alarm: Supply air fan RPM"
+      },
+      "alarm_alarm_sat_state": {
+        "name": "Alarm: Supply air temperature"
+      },
+      "function_reg_function_active_cooling": {
+        "name": "Function: Cooling"
+      },
+      "function_reg_function_active_free_cooling": {
+        "name": "Function: Free cooling"
+      },
+      "function_reg_function_active_heating": {
+        "name": "Function: Heating"
+      },
+      "function_reg_function_active_defrosting": {
+        "name": "Function: Defrosting"
+      },
+      "function_reg_function_active_heat_recovery": {
+        "name": "Function: Heat recovery"
+      },
+      "function_reg_function_active_cooling_recovery": {
+        "name": "Function: Cooling recovery"
+      },
+      "function_reg_function_active_moisture_transfer": {
+        "name": "Function: Moisture transfer"
+      },
+      "function_reg_function_active_secondary_air": {
+        "name": "Function: Secondary air"
+      },
+      "function_reg_function_active_vacuum_cleaner": {
+        "name": "Function: Vacuum cleaner"
+      },
+      "function_reg_function_active_cooker_hood": {
+        "name": "Function: Cooker hood"
+      },
+      "function_reg_function_active_user_lock": {
+        "name": "Function: User lock"
+      },
+      "function_reg_function_active_eco_mode": {
+        "name": "Function: ECO mode active"
+      },
+      "function_reg_function_active_heater_cool_down": {
+        "name": "Function: Heater cool down"
+      },
+      "function_reg_function_active_pressure_guard": {
+        "name": "Function: Pressure guard"
+      },
+      "function_reg_function_active_cdi_1": {
+        "name": "Function: Configurable DI1"
+      },
+      "function_reg_function_active_cdi_2": {
+        "name": "Function: Configurable DI2"
+      },
+      "function_reg_function_active_cdi_3": {
+        "name": "Function: Configurable DI3"
+      },
+      "function_reg_sensor_di_cookerhood": {
+        "name": "Function: Cooker hood (DI)"
+      },
+      "function_reg_sensor_di_vacuumcleaner": {
+        "name": "Function: Vacuum cleaner (DI)"
+      }
+    },
+    "switch": {
+      "eco_mode": {
+        "name": "ECO mode"
+      },
+      "moisture_transfer": {
+        "name": "Moisture transfer"
+      }
+    },
+    "select": {
+      "user_mode_select": {
+        "name": "User mode",
+        "state": {
+          "auto": "Auto",
+          "manual": "Manual"
+        }
+      }
+    },
+    "number": {
+      "reg_usermode_crowded_airflow_level_saf": {
+        "name": "Crowded supply fan level"
+      },
+      "reg_usermode_crowded_airflow_level_eaf": {
+        "name": "Crowded extract fan level"
+      },
+      "reg_usermode_refresh_airflow_level_saf": {
+        "name": "Refresh supply fan level"
+      },
+      "reg_usermode_refresh_airflow_level_eaf": {
+        "name": "Refresh extract fan level"
+      },
+      "reg_usermode_fireplace_airflow_level_saf": {
+        "name": "Fireplace supply fan level"
+      },
+      "reg_usermode_fireplace_airflow_level_eaf": {
+        "name": "Fireplace extract fan level"
+      },
+      "reg_usermode_away_airflow_level_saf": {
+        "name": "Away supply fan level"
+      },
+      "reg_usermode_away_airflow_level_eaf": {
+        "name": "Away extract fan level"
+      },
+      "reg_usermode_holiday_airflow_level_saf": {
+        "name": "Holiday supply fan level"
+      },
+      "reg_usermode_holiday_airflow_level_eaf": {
+        "name": "Holiday extract fan level"
+      },
+      "reg_usermode_cookerhood_airflow_level_saf": {
+        "name": "Cooker hood supply fan level"
+      },
+      "reg_usermode_cookerhood_airflow_level_eaf": {
+        "name": "Cooker hood extract fan level"
+      },
+      "reg_usermode_vacuumcleaner_airflow_level_saf": {
+        "name": "Vacuum cleaner supply fan level"
+      },
+      "reg_usermode_vacuumcleaner_airflow_level_eaf": {
+        "name": "Vacuum cleaner extract fan level"
+      },
+      "reg_pressure_guard_airflow_level_saf": {
+        "name": "Pressure guard supply fan level"
+      },
+      "reg_pressure_guard_airflow_level_eaf": {
+        "name": "Pressure guard extract fan level"
+      },
+      "reg_usermode_holiday_time": {
+        "name": "Holiday mode duration"
+      },
+      "reg_usermode_away_time": {
+        "name": "Away mode duration"
+      },
+      "reg_usermode_fireplace_time": {
+        "name": "Fireplace mode duration"
+      },
+      "reg_usermode_refresh_time": {
+        "name": "Refresh mode duration"
+      },
+      "reg_usermode_crowded_time": {
+        "name": "Crowded mode duration"
+      }
+    }
+  },
+  "services": {
+    "set_away_mode": {
+      "name": "Set away mode",
+      "description": "Activate away mode for a specified duration.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "The Systemair climate entity."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "Duration in hours (1-72)."
+        }
+      }
+    },
+    "set_crowded_mode": {
+      "name": "Set crowded mode",
+      "description": "Activate crowded mode for a specified duration.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "The Systemair climate entity."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "Duration in hours (1-8)."
+        }
+      }
+    },
+    "set_fireplace_mode": {
+      "name": "Set fireplace mode",
+      "description": "Activate fireplace mode for a specified duration.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "The Systemair climate entity."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "Duration in minutes (1-60)."
+        }
+      }
+    },
+    "set_holiday_mode": {
+      "name": "Set holiday mode",
+      "description": "Activate holiday mode for a specified duration.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "The Systemair climate entity."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "Duration in days (1-365)."
+        }
+      }
+    },
+    "set_refresh_mode": {
+      "name": "Set refresh mode",
+      "description": "Activate refresh mode for a specified duration.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "The Systemair climate entity."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "Duration in minutes (1-240)."
+        }
+      }
+    }
+  }
+}

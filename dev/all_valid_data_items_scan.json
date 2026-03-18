@@ -1,0 +1,2077 @@
+{
+  "0": {
+    "modbus": 0,
+    "value": 18753,
+    "decimals": null,
+    "readOnly": false
+  },
+  "1": {
+    "modbus": 17,
+    "value": 10285,
+    "decimals": null,
+    "readOnly": true
+  },
+  "2": {
+    "modbus": 2200,
+    "value": 1402080837,
+    "decimals": null,
+    "readOnly": false
+  },
+  "3": {
+    "modbus": 2100,
+    "value": "%\u00ff\u00ff\u00ff\u00ff\u00ff\u00ffNEH\u0003p\u0010\u0016",
+    "decimals": null,
+    "readOnly": true
+  },
+  "4": {
+    "modbus": 20015,
+    "value": 15257,
+    "decimals": null,
+    "readOnly": false
+  },
+  "5": {
+    "modbus": 1595,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "6": {
+    "modbus": 1597,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "7": {
+    "modbus": 1596,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "8": {
+    "modbus": 1041,
+    "value": "",
+    "decimals": null,
+    "readOnly": false
+  },
+  "9": {
+    "modbus": 1037,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "10": {
+    "modbus": 1039,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "11": {
+    "modbus": 1092,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "12": {
+    "modbus": 1040,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "13": {
+    "modbus": 1038,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "14": {
+    "modbus": 16061,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "15": {
+    "modbus": 16060,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "16": {
+    "modbus": 30100,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "17": {
+    "modbus": 30102,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "18": {
+    "modbus": 30103,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "19": {
+    "modbus": 30104,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "20": {
+    "modbus": 7000,
+    "value": 12,
+    "decimals": null,
+    "readOnly": false
+  },
+  "21": {
+    "modbus": 7003,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "22": {
+    "modbus": 7004,
+    "value": 19165917,
+    "decimals": null,
+    "readOnly": true
+  },
+  "23": {
+    "modbus": 7007,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "24": {
+    "modbus": 6000,
+    "value": "2026-03-17T23:16:47",
+    "decimals": null,
+    "readOnly": false
+  },
+  "25": {
+    "modbus": 6006,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "26": {
+    "modbus": 6007,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "27": {
+    "modbus": 8950,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "28": {
+    "modbus": 9002,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "29": {
+    "modbus": 1164,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "31": {
+    "modbus": 1241,
+    "value": 3,
+    "decimals": null,
+    "readOnly": false
+  },
+  "32": {
+    "modbus": 2000,
+    "value": 190,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "33": {
+    "modbus": 1122,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "42": {
+    "modbus": 8900,
+    "value": "",
+    "decimals": null,
+    "readOnly": false
+  },
+  "43": {
+    "modbus": 16100,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "45": {
+    "modbus": 9000,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "46": {
+    "modbus": 9001,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "47": {
+    "modbus": 1270,
+    "value": 2500,
+    "decimals": null,
+    "readOnly": false
+  },
+  "48": {
+    "modbus": 1271,
+    "value": 5,
+    "decimals": null,
+    "readOnly": false
+  },
+  "49": {
+    "modbus": 14400,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "50": {
+    "modbus": 14401,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "51": {
+    "modbus": 5059,
+    "value": 3,
+    "decimals": null,
+    "readOnly": false
+  },
+  "52": {
+    "modbus": 5060,
+    "value": 2,
+    "decimals": null,
+    "readOnly": false
+  },
+  "53": {
+    "modbus": 12102,
+    "value": 179,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "54": {
+    "modbus": 12101,
+    "value": 82,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "55": {
+    "modbus": 12100,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "56": {
+    "modbus": 12103,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "57": {
+    "modbus": 12104,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "58": {
+    "modbus": 12105,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "59": {
+    "modbus": 12106,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "60": {
+    "modbus": 12107,
+    "value": 171,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "65": {
+    "modbus": 12150,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "66": {
+    "modbus": 12151,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "67": {
+    "modbus": 12152,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "68": {
+    "modbus": 12153,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "69": {
+    "modbus": 12154,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "70": {
+    "modbus": 12155,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "71": {
+    "modbus": 12160,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "72": {
+    "modbus": 12161,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "73": {
+    "modbus": 12162,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "74": {
+    "modbus": 12163,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "75": {
+    "modbus": 12164,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "76": {
+    "modbus": 12165,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "77": {
+    "modbus": 12114,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "78": {
+    "modbus": 12135,
+    "value": 59,
+    "decimals": null,
+    "readOnly": true
+  },
+  "79": {
+    "modbus": 12200,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "80": {
+    "modbus": 12201,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "81": {
+    "modbus": 12202,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "82": {
+    "modbus": 12203,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "83": {
+    "modbus": 12400,
+    "value": 2340,
+    "decimals": null,
+    "readOnly": true
+  },
+  "84": {
+    "modbus": 12401,
+    "value": 2100,
+    "decimals": null,
+    "readOnly": true
+  },
+  "85": {
+    "modbus": 12402,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "86": {
+    "modbus": 12403,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "87": {
+    "modbus": 12404,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "88": {
+    "modbus": 12542,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "89": {
+    "modbus": 12543,
+    "value": 221,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "90": {
+    "modbus": 2100,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "91": {
+    "modbus": 2101,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": true
+  },
+  "92": {
+    "modbus": 11500,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "93": {
+    "modbus": 11501,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "94": {
+    "modbus": 11502,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "95": {
+    "modbus": 11503,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "96": {
+    "modbus": 23000,
+    "value": -12,
+    "decimals": null,
+    "readOnly": false
+  },
+  "97": {
+    "modbus": 23001,
+    "value": -12,
+    "decimals": null,
+    "readOnly": false
+  },
+  "98": {
+    "modbus": 23038,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "99": {
+    "modbus": 23039,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "100": {
+    "modbus": 23035,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "101": {
+    "modbus": 23135,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "102": {
+    "modbus": 3100,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "103": {
+    "modbus": 3101,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "104": {
+    "modbus": 3102,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "105": {
+    "modbus": 3103,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "106": {
+    "modbus": 3104,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "107": {
+    "modbus": 3105,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "108": {
+    "modbus": 3106,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "109": {
+    "modbus": 3107,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "110": {
+    "modbus": 3108,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "111": {
+    "modbus": 3109,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "112": {
+    "modbus": 3110,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "113": {
+    "modbus": 3111,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "114": {
+    "modbus": 3112,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "115": {
+    "modbus": 3113,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "116": {
+    "modbus": 3114,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "117": {
+    "modbus": 3115,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "118": {
+    "modbus": 3116,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "119": {
+    "modbus": 15900,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "120": {
+    "modbus": 15901,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "121": {
+    "modbus": 15902,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "122": {
+    "modbus": 15000,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "123": {
+    "modbus": 15001,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "124": {
+    "modbus": 15002,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "125": {
+    "modbus": 15007,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "126": {
+    "modbus": 15008,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "127": {
+    "modbus": 15009,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "128": {
+    "modbus": 15014,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "129": {
+    "modbus": 15015,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "130": {
+    "modbus": 15016,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "131": {
+    "modbus": 15021,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "132": {
+    "modbus": 15022,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "133": {
+    "modbus": 15023,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "134": {
+    "modbus": 15028,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "135": {
+    "modbus": 15029,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "136": {
+    "modbus": 15030,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "137": {
+    "modbus": 15035,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "138": {
+    "modbus": 15036,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "139": {
+    "modbus": 15037,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "140": {
+    "modbus": 15056,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "141": {
+    "modbus": 15057,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "142": {
+    "modbus": 15058,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "143": {
+    "modbus": 15063,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "144": {
+    "modbus": 15064,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "145": {
+    "modbus": 15065,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "146": {
+    "modbus": 15070,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "147": {
+    "modbus": 15071,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "148": {
+    "modbus": 15072,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "149": {
+    "modbus": 15077,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "150": {
+    "modbus": 15078,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "151": {
+    "modbus": 15079,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "152": {
+    "modbus": 15084,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "153": {
+    "modbus": 15085,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "154": {
+    "modbus": 15086,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "155": {
+    "modbus": 15091,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "156": {
+    "modbus": 15092,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "157": {
+    "modbus": 15093,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "158": {
+    "modbus": 15098,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "159": {
+    "modbus": 15099,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "160": {
+    "modbus": 15100,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "161": {
+    "modbus": 15105,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "162": {
+    "modbus": 15106,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "163": {
+    "modbus": 15107,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "164": {
+    "modbus": 15112,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "165": {
+    "modbus": 15113,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "166": {
+    "modbus": 15114,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "167": {
+    "modbus": 15119,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "168": {
+    "modbus": 15120,
+    "value": 2,
+    "decimals": null,
+    "readOnly": false
+  },
+  "169": {
+    "modbus": 15121,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "170": {
+    "modbus": 15126,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "171": {
+    "modbus": 15127,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "172": {
+    "modbus": 15128,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "173": {
+    "modbus": 15133,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "174": {
+    "modbus": 15134,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "175": {
+    "modbus": 15135,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "176": {
+    "modbus": 15140,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "177": {
+    "modbus": 15141,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "178": {
+    "modbus": 15142,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "179": {
+    "modbus": 15147,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "180": {
+    "modbus": 15148,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "181": {
+    "modbus": 15149,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "182": {
+    "modbus": 15154,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "183": {
+    "modbus": 15155,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "184": {
+    "modbus": 15156,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "185": {
+    "modbus": 15500,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "186": {
+    "modbus": 15501,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "187": {
+    "modbus": 15502,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "188": {
+    "modbus": 15161,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "189": {
+    "modbus": 15162,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "190": {
+    "modbus": 15163,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "191": {
+    "modbus": 15168,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "192": {
+    "modbus": 15169,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "193": {
+    "modbus": 15170,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "194": {
+    "modbus": 15175,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "195": {
+    "modbus": 15176,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "196": {
+    "modbus": 15177,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "197": {
+    "modbus": 15182,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "198": {
+    "modbus": 15183,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "199": {
+    "modbus": 15184,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "200": {
+    "modbus": 15507,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "201": {
+    "modbus": 15508,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "202": {
+    "modbus": 15509,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "203": {
+    "modbus": 15514,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "204": {
+    "modbus": 15515,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "205": {
+    "modbus": 15516,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "206": {
+    "modbus": 15521,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "207": {
+    "modbus": 15522,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "208": {
+    "modbus": 15523,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "209": {
+    "modbus": 15528,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "210": {
+    "modbus": 15529,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "211": {
+    "modbus": 15530,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "212": {
+    "modbus": 15535,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "213": {
+    "modbus": 15536,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "214": {
+    "modbus": 15537,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "215": {
+    "modbus": 15542,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "216": {
+    "modbus": 15543,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "217": {
+    "modbus": 15544,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "218": {
+    "modbus": 15300,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "219": {
+    "modbus": 15302,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "220": {
+    "modbus": 15304,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "221": {
+    "modbus": 15306,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "222": {
+    "modbus": 15308,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "223": {
+    "modbus": 15310,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "224": {
+    "modbus": 15316,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "225": {
+    "modbus": 15318,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "226": {
+    "modbus": 15320,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "227": {
+    "modbus": 15322,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "228": {
+    "modbus": 15324,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "229": {
+    "modbus": 15326,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "230": {
+    "modbus": 15328,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "231": {
+    "modbus": 15330,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "232": {
+    "modbus": 15332,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "233": {
+    "modbus": 15334,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "234": {
+    "modbus": 15336,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "235": {
+    "modbus": 15338,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "236": {
+    "modbus": 15340,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "237": {
+    "modbus": 15342,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "238": {
+    "modbus": 15344,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "239": {
+    "modbus": 15346,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "240": {
+    "modbus": 15348,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "241": {
+    "modbus": 15350,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "242": {
+    "modbus": 15354,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "243": {
+    "modbus": 15602,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "244": {
+    "modbus": 15604,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "245": {
+    "modbus": 15600,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "246": {
+    "modbus": 15606,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "247": {
+    "modbus": 15608,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "248": {
+    "modbus": 15352,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "249": {
+    "modbus": 15610,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "250": {
+    "modbus": 1110,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "251": {
+    "modbus": 1100,
+    "value": 4,
+    "decimals": null,
+    "readOnly": false
+  },
+  "252": {
+    "modbus": 1101,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "253": {
+    "modbus": 1102,
+    "value": 30,
+    "decimals": null,
+    "readOnly": false
+  },
+  "254": {
+    "modbus": 1103,
+    "value": 60,
+    "decimals": null,
+    "readOnly": false
+  },
+  "255": {
+    "modbus": 1104,
+    "value": 3,
+    "decimals": null,
+    "readOnly": false
+  },
+  "256": {
+    "modbus": 1043,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "257": {
+    "modbus": 1034,
+    "value": true,
+    "decimals": null,
+    "readOnly": false
+  },
+  "258": {
+    "modbus": 5061,
+    "value": false,
+    "decimals": null,
+    "readOnly": true
+  },
+  "259": {
+    "modbus": 2132,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "260": {
+    "modbus": 3001,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "261": {
+    "modbus": 3002,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "262": {
+    "modbus": 4013,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "263": {
+    "modbus": 13021,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "264": {
+    "modbus": 2262,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "265": {
+    "modbus": 2260,
+    "value": false,
+    "decimals": null,
+    "readOnly": false
+  },
+  "266": {
+    "modbus": 2261,
+    "value": 70,
+    "decimals": null,
+    "readOnly": false
+  },
+  "267": {
+    "modbus": 13020,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "268": {
+    "modbus": 13024,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "269": {
+    "modbus": 2112,
+    "value": 100,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "270": {
+    "modbus": 2121,
+    "value": 5,
+    "decimals": null,
+    "readOnly": false
+  },
+  "271": {
+    "modbus": 2450,
+    "value": 50,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "272": {
+    "modbus": 2451,
+    "value": 5,
+    "decimals": null,
+    "readOnly": false
+  },
+  "273": {
+    "modbus": 3013,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "274": {
+    "modbus": 13022,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "275": {
+    "modbus": 2315,
+    "value": 120,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "276": {
+    "modbus": 2316,
+    "value": 5,
+    "decimals": null,
+    "readOnly": false
+  },
+  "277": {
+    "modbus": 3014,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "278": {
+    "modbus": 2417,
+    "value": 1,
+    "decimals": null,
+    "readOnly": false
+  },
+  "279": {
+    "modbus": 2402,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "280": {
+    "modbus": 2400,
+    "value": 40,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "281": {
+    "modbus": 2401,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "282": {
+    "modbus": 13023,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "283": {
+    "modbus": 2403,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "284": {
+    "modbus": 2404,
+    "value": 5,
+    "decimals": null,
+    "readOnly": false
+  },
+  "285": {
+    "modbus": 2421,
+    "value": 200,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "286": {
+    "modbus": 2422,
+    "value": 150,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "287": {
+    "modbus": 2419,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "288": {
+    "modbus": 2420,
+    "value": 0,
+    "decimals": 1,
+    "readOnly": false
+  },
+  "289": {
+    "modbus": 16000,
+    "value": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "decimals": null,
+    "readOnly": false
+  },
+  "290": {
+    "modbus": 20015,
+    "value": 24449,
+    "decimals": null,
+    "readOnly": false
+  },
+  "291": {
+    "modbus": 20000,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "292": {
+    "modbus": 20001,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "293": {
+    "modbus": 20002,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "294": {
+    "modbus": 20006,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "295": {
+    "modbus": 20007,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "296": {
+    "modbus": 20008,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "297": {
+    "modbus": 20009,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "298": {
+    "modbus": 20010,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "299": {
+    "modbus": 20011,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "300": {
+    "modbus": 20012,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "301": {
+    "modbus": 20013,
+    "value": 10,
+    "decimals": null,
+    "readOnly": true
+  },
+  "302": {
+    "modbus": 20014,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "303": {
+    "modbus": 21066,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "304": {
+    "modbus": 21067,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "305": {
+    "modbus": 21068,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "306": {
+    "modbus": 21071,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "307": {
+    "modbus": 21072,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "308": {
+    "modbus": 21073,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "309": {
+    "modbus": 21074,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "310": {
+    "modbus": 21075,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "311": {
+    "modbus": 21076,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "312": {
+    "modbus": 20000,
+    "value": 2,
+    "decimals": null,
+    "readOnly": true
+  },
+  "313": {
+    "modbus": 20001,
+    "value": 4,
+    "decimals": null,
+    "readOnly": true
+  },
+  "314": {
+    "modbus": 20002,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "315": {
+    "modbus": 20006,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "316": {
+    "modbus": 20007,
+    "value": 24,
+    "decimals": null,
+    "readOnly": true
+  },
+  "317": {
+    "modbus": 20008,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "318": {
+    "modbus": 20009,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "319": {
+    "modbus": 20010,
+    "value": 24,
+    "decimals": null,
+    "readOnly": true
+  },
+  "320": {
+    "modbus": 20011,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "321": {
+    "modbus": 20012,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "322": {
+    "modbus": 20013,
+    "value": 12,
+    "decimals": null,
+    "readOnly": true
+  },
+  "323": {
+    "modbus": 20014,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "324": {
+    "modbus": 21066,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "325": {
+    "modbus": 21067,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "326": {
+    "modbus": 21068,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "327": {
+    "modbus": 21071,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "328": {
+    "modbus": 21072,
+    "value": 24,
+    "decimals": null,
+    "readOnly": true
+  },
+  "329": {
+    "modbus": 21073,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "330": {
+    "modbus": 21074,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "331": {
+    "modbus": 21075,
+    "value": 24,
+    "decimals": null,
+    "readOnly": true
+  },
+  "332": {
+    "modbus": 21076,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "333": {
+    "modbus": 20015,
+    "value": -16885,
+    "decimals": null,
+    "readOnly": false
+  },
+  "334": {
+    "modbus": 20543,
+    "value": 0,
+    "decimals": null,
+    "readOnly": false
+  },
+  "335": {
+    "modbus": 20000,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "336": {
+    "modbus": 20001,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "337": {
+    "modbus": 20002,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "338": {
+    "modbus": 20003,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "339": {
+    "modbus": 20004,
+    "value": 10,
+    "decimals": null,
+    "readOnly": true
+  },
+  "340": {
+    "modbus": 20005,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "341": {
+    "modbus": 20006,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "342": {
+    "modbus": 20007,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "343": {
+    "modbus": 20008,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "344": {
+    "modbus": 20009,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "345": {
+    "modbus": 20010,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "346": {
+    "modbus": 20011,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "347": {
+    "modbus": 20012,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "348": {
+    "modbus": 20013,
+    "value": 10,
+    "decimals": null,
+    "readOnly": true
+  },
+  "349": {
+    "modbus": 20014,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "350": {
+    "modbus": 21066,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "351": {
+    "modbus": 21067,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "352": {
+    "modbus": 21068,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "353": {
+    "modbus": 21071,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "354": {
+    "modbus": 21072,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "355": {
+    "modbus": 21073,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  },
+  "356": {
+    "modbus": 21074,
+    "value": 1,
+    "decimals": null,
+    "readOnly": true
+  },
+  "357": {
+    "modbus": 21075,
+    "value": 22,
+    "decimals": null,
+    "readOnly": true
+  },
+  "358": {
+    "modbus": 21076,
+    "value": 0,
+    "decimals": null,
+    "readOnly": true
+  }
+}

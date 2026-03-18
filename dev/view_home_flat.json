@@ -1,0 +1,804 @@
+{
+  "id": "/home",
+  "title": "VIEWS_HOME_TITLE",
+  "route": "/home",
+  "customComponentName": null,
+  "error": null,
+  "translationVariables": null,
+  "protection": null,
+  "children": [
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 29,
+          "type": 3,
+          "defaultValue": 0,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 1164,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "options": [
+            {
+              "title": "USER_MODES_AUTO_TITLE",
+              "value": 0
+            },
+            {
+              "title": "USER_MODES_MANUAL_TITLE",
+              "value": 1
+            },
+            {
+              "title": "USER_MODES_CROWDED_TITLE",
+              "value": 2
+            },
+            {
+              "title": "USER_MODES_REFRESH_TITLE",
+              "value": 3
+            },
+            {
+              "title": "USER_MODES_FIREPLACE_TITLE",
+              "value": 4
+            },
+            {
+              "title": "USER_MODES_AWAY_TITLE",
+              "value": 5
+            },
+            {
+              "title": "USER_MODES_HOLIDAY_TITLE",
+              "value": 6
+            },
+            {
+              "title": "USER_MODES_MANUAL_TITLE",
+              "value": 7
+            },
+            {
+              "title": "USER_MODES_MANUAL_TITLE",
+              "value": 8
+            },
+            {
+              "title": "USER_MODES_MANUAL_TITLE",
+              "value": 9
+            },
+            {
+              "title": "USER_MODES_MANUAL_TITLE",
+              "value": 10
+            },
+            {
+              "title": "USER_MODES_MANUAL_TITLE",
+              "value": 11
+            },
+            {
+              "title": "USER_MODES_MANUAL_TITLE",
+              "value": 12
+            }
+          ],
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": 1
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 31,
+          "type": 3,
+          "defaultValue": 0,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 1241,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "options": [
+            {
+              "title": "AIR_AIRFLOW_LEVEL_OFF",
+              "value": 0
+            },
+            {
+              "title": "AIR_AIRFLOW_LEVEL_MINIMUM",
+              "value": 1
+            },
+            {
+              "title": "AIR_AIRFLOW_LEVEL_LOW",
+              "value": 2
+            },
+            {
+              "title": "AIR_AIRFLOW_LEVEL_NORMAL",
+              "value": 3
+            },
+            {
+              "title": "AIR_AIRFLOW_LEVEL_HIGH",
+              "value": 4
+            },
+            {
+              "title": "AIR_AIRFLOW_LEVEL_MAXIMUM",
+              "value": 5
+            },
+            {
+              "title": "AIR_AIRFLOW_LEVEL_DEMAND",
+              "value": 6
+            },
+            {
+              "title": "AIR_AIRFLOW_LEVEL_EXTERNAL",
+              "value": 7
+            }
+          ],
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": 3
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 32,
+          "defaultValue": 180,
+          "type": 2,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 2000,
+            "numberOfRegisters": 1
+          },
+          "decimals": 1,
+          "increment": 1,
+          "max": 300,
+          "min": 120,
+          "unit": 5,
+          "readOnly": false,
+          "conditionalProperties": [
+            {
+              "conditions": [
+                {
+                  "dataItemId": 28,
+                  "requiredDataItems": {},
+                  "equalityOperator": true,
+                  "values": [
+                    0
+                  ]
+                }
+              ],
+              "logic": "and",
+              "properties": {
+                "unit": 5,
+                "max": 300,
+                "min": 120
+              }
+            },
+            {
+              "conditions": [
+                {
+                  "dataItemId": 28,
+                  "requiredDataItems": {},
+                  "equalityOperator": true,
+                  "values": [
+                    1
+                  ]
+                }
+              ],
+              "logic": "and",
+              "properties": {
+                "unit": 6,
+                "max": 860,
+                "min": 540
+              }
+            }
+          ],
+          "exportable": true,
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": 190
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 250,
+          "defaultValue": 100,
+          "type": 2,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 1110,
+            "numberOfRegisters": 2
+          },
+          "max": 31536000,
+          "min": 0,
+          "unit": 1,
+          "readOnly": true,
+          "value": 0
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 33,
+          "type": 3,
+          "defaultValue": 0,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 1122,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "options": [
+            {
+              "title": "AIR_AIR_QUALITY_ECONOMIC",
+              "value": 0
+            },
+            {
+              "title": "AIR_AIR_QUALITY_GOOD",
+              "value": 1
+            },
+            {
+              "title": "AIR_AIR_QUALITY_IMPROVING",
+              "value": 2
+            }
+          ],
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": 0
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 54,
+          "defaultValue": 197,
+          "type": 2,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 12101,
+            "numberOfRegisters": 1
+          },
+          "decimals": 1,
+          "max": 800,
+          "min": -400,
+          "unit": 5,
+          "readOnly": true,
+          "conditionalProperties": [
+            {
+              "conditions": [
+                {
+                  "dataItemId": 28,
+                  "requiredDataItems": {},
+                  "equalityOperator": true,
+                  "values": [
+                    1
+                  ]
+                }
+              ],
+              "logic": "and",
+              "properties": {
+                "unit": 6
+              }
+            }
+          ],
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": 82
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 34,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 2504,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "exportable": true,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 35,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 16001,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "exportable": true,
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 119,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 15900,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 120,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 15901,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 121,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 15902,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 43,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 16100,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "exportable": true,
+          "cache": {
+            "invalidateDataItemsOnWrite": []
+          },
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 260,
+          "type": 3,
+          "defaultValue": 0,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3001,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "options": [
+            {
+              "title": "VIEWS_SERVICE_COMPONENTS_VALUES_NONE_TITLE",
+              "value": 0
+            },
+            {
+              "title": "VIEWS_SERVICE_COMPONENTS_VALUES_ELECTRICAL_TITLE",
+              "value": 1
+            },
+            {
+              "title": "VIEWS_SERVICE_COMPONENTS_VALUES_WATER_TITLE",
+              "value": 2
+            },
+            {
+              "title": "VIEWS_SERVICE_COMPONENTS_VALUES_CHANGE_OVER_TITLE",
+              "value": 3
+            }
+          ],
+          "exportable": true,
+          "value": 1
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 102,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3100,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 103,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3101,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 104,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3102,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 105,
+          "defaultValue": true,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3103,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 106,
+          "defaultValue": true,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3104,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": true
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 107,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3105,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 108,
+          "defaultValue": true,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3106,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": true
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 109,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3107,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 110,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3108,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 111,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3109,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 112,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3110,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 113,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3111,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 114,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3112,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 115,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3113,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 116,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3114,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 117,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3115,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    },
+    {
+      "type": 0,
+      "feature": null,
+      "properties": {
+        "dataItem": {
+          "id": 118,
+          "defaultValue": false,
+          "type": 1,
+          "extension": {
+            "internalDeviceType": 1,
+            "modbusRegister": 3116,
+            "numberOfRegisters": 1
+          },
+          "readOnly": false,
+          "value": false
+        },
+        "enabled": true
+      }
+    }
+  ]
+}

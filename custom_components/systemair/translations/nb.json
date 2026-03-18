@@ -1,0 +1,435 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Systemair HVAC",
+        "description": "Velg hvordan du vil koble til Systemair-enheten.",
+        "data": {
+          "connection_type": "Tilkoblingstype"
+        }
+      },
+      "modbus": {
+        "title": "Modbus TCP-tilkobling",
+        "description": "Skriv inn IP-adressen til Systemair IAM-modulen.",
+        "data": {
+          "ip_address": "IP-adresse"
+        },
+        "sections": {
+          "advanced": {
+            "name": "Avanserte innstillinger",
+            "data": {
+              "port": "Port",
+              "poll_interval": "Pollintervall (sekunder)"
+            }
+          }
+        }
+      },
+      "saveconnect": {
+        "title": "Save Connect-tilkobling",
+        "description": "Skriv inn IP-adressen til Systemair Save Connect-enheten.",
+        "data": {
+          "ip_address": "IP-adresse"
+        },
+        "sections": {
+          "advanced": {
+            "name": "Avanserte innstillinger",
+            "data": {
+              "port": "Port",
+              "poll_interval": "Pollintervall (sekunder)"
+            }
+          }
+        }
+      },
+      "cloud": {
+        "title": "Skytilkobling",
+        "description": "Skriv inn påloggingsinformasjonen for Systemair Home Solutions-kontoen din.",
+        "data": {
+          "email": "E-post",
+          "password": "Passord"
+        },
+        "sections": {
+          "advanced": {
+            "name": "Avanserte innstillinger",
+            "data": {
+              "poll_interval": "Pollintervall (sekunder)",
+              "api_url": "API URL-overstyring",
+              "ws_url": "WebSocket URL-overstyring"
+            },
+            "data_description": {
+              "api_url": "La stå tom for å bruke standard Systemair sky-API.",
+              "ws_url": "La stå tom for å bruke standard Systemair sky-WebSocket."
+            }
+          }
+        }
+      },
+      "cloud_device": {
+        "title": "Velg enhet",
+        "description": "Flere enheter funnet. Velg enheten som skal legges til.",
+        "data": {
+          "machine_id": "Enhet"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kunne ikke koble til enheten.",
+      "invalid_auth": "Ugyldig e-post eller passord.",
+      "no_devices": "Ingen enheter funnet på denne kontoen.",
+      "invalid_host": "Ugyldig vertsnavn eller IP-adresse.",
+      "invalid_url": "Ugyldig URL-format."
+    },
+    "abort": {
+      "already_configured": "Denne enheten er allerede konfigurert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Systemair-innstillinger",
+        "description": "Konfigurer integrasjonsinnstillinger.",
+        "data": {
+          "poll_interval": "Pollintervall (sekunder)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "supply_air_temperature": {
+        "name": "Tillufttemperatur"
+      },
+      "outdoor_air_temperature": {
+        "name": "Utetemperatur"
+      },
+      "extract_air_temperature": {
+        "name": "Avtrekkstemperatur"
+      },
+      "overheat_temperature": {
+        "name": "Overopphetingstemperatur"
+      },
+      "humidity": {
+        "name": "Luftfuktighet"
+      },
+      "co2": {
+        "name": "CO2"
+      },
+      "saf_rpm": {
+        "name": "Tilluftvifte turtall"
+      },
+      "eaf_rpm": {
+        "name": "Avtrekksvifte turtall"
+      },
+      "saf_speed": {
+        "name": "Tilluftvifte hastighet"
+      },
+      "eaf_speed": {
+        "name": "Avtrekksvifte hastighet"
+      },
+      "filter_days_left": {
+        "name": "Filterdager igjen"
+      },
+      "user_mode": {
+        "name": "Brukermodus"
+      },
+      "fan_mode_sensor": {
+        "name": "Viftemodus"
+      },
+      "heater_output": {
+        "name": "Varmeeffekt"
+      },
+      "cooler_output": {
+        "name": "Kjøleeffekt"
+      },
+      "remaining_time": {
+        "name": "Tidsstyrt modus gjenstående"
+      },
+      "air_quality": {
+        "name": "Luftkvalitet"
+      },
+      "heat_exchanger_type": {
+        "name": "Varmevekslertype"
+      },
+      "heat_exchanger_speed": {
+        "name": "Varmevekslerhastighet"
+      },
+      "heater_type": {
+        "name": "Varmetype"
+      },
+      "heater_position": {
+        "name": "Varmeposisjon"
+      }
+    },
+    "binary_sensor": {
+      "heater_active": {
+        "name": "Varmer aktiv"
+      },
+      "cooler_active": {
+        "name": "Kjøler aktiv"
+      },
+      "alarm_alarm_co2_state": {
+        "name": "Alarm: CO2"
+      },
+      "alarm_alarm_defrosting_state": {
+        "name": "Alarm: Avriming"
+      },
+      "alarm_alarm_eaf_rpm_state": {
+        "name": "Alarm: Avtrekksvifte turtall"
+      },
+      "alarm_alarm_eat_state": {
+        "name": "Alarm: Avtrekkstemperatur"
+      },
+      "alarm_alarm_emt_state": {
+        "name": "Alarm: Frostbeskyttelse (EMT)"
+      },
+      "alarm_alarm_filter_state": {
+        "name": "Alarm: Filter"
+      },
+      "alarm_alarm_filter_warning_state": {
+        "name": "Alarm: Filteradvarsel"
+      },
+      "alarm_alarm_fire_alarm_state": {
+        "name": "Alarm: Brannalarm"
+      },
+      "alarm_alarm_frost_prot_state": {
+        "name": "Alarm: Frostbeskyttelse"
+      },
+      "alarm_alarm_low_sat_state": {
+        "name": "Alarm: Lav tillufttemperatur"
+      },
+      "alarm_alarm_manual_mode_state": {
+        "name": "Alarm: Manuell modus"
+      },
+      "alarm_alarm_overheat_temperature_state": {
+        "name": "Alarm: Overopphetingstemperatur"
+      },
+      "alarm_alarm_pdm_rhs_state": {
+        "name": "Alarm: Fuktighetssensor feil (PDM)"
+      },
+      "alarm_alarm_rgs_state": {
+        "name": "Alarm: Rotasjonsvakt (RGS)"
+      },
+      "alarm_alarm_rh_state": {
+        "name": "Alarm: Fuktighetssensor feil (RH)"
+      },
+      "alarm_alarm_rotor_motor_feedback_state": {
+        "name": "Alarm: Rotormotor tilbakemelding"
+      },
+      "alarm_alarm_saf_rpm_state": {
+        "name": "Alarm: Tilluftvifte turtall"
+      },
+      "alarm_alarm_sat_state": {
+        "name": "Alarm: Tillufttemperatur"
+      },
+      "function_reg_function_active_cooling": {
+        "name": "Funksjon: Kjøling"
+      },
+      "function_reg_function_active_free_cooling": {
+        "name": "Funksjon: Frikjøling"
+      },
+      "function_reg_function_active_heating": {
+        "name": "Funksjon: Oppvarming"
+      },
+      "function_reg_function_active_defrosting": {
+        "name": "Funksjon: Avriming"
+      },
+      "function_reg_function_active_heat_recovery": {
+        "name": "Funksjon: Varmegjenvinning"
+      },
+      "function_reg_function_active_cooling_recovery": {
+        "name": "Funksjon: Kjølegjenvinning"
+      },
+      "function_reg_function_active_moisture_transfer": {
+        "name": "Funksjon: Fuktoverføring"
+      },
+      "function_reg_function_active_secondary_air": {
+        "name": "Funksjon: Sekundærluft"
+      },
+      "function_reg_function_active_vacuum_cleaner": {
+        "name": "Funksjon: Støvsuger"
+      },
+      "function_reg_function_active_cooker_hood": {
+        "name": "Funksjon: Kjøkkenvifte"
+      },
+      "function_reg_function_active_user_lock": {
+        "name": "Funksjon: Brukerlås"
+      },
+      "function_reg_function_active_eco_mode": {
+        "name": "Funksjon: ECO-modus aktiv"
+      },
+      "function_reg_function_active_heater_cool_down": {
+        "name": "Funksjon: Varmernedkjøling"
+      },
+      "function_reg_function_active_pressure_guard": {
+        "name": "Funksjon: Trykkvakt"
+      },
+      "function_reg_function_active_cdi_1": {
+        "name": "Funksjon: Konfigurerbar DI1"
+      },
+      "function_reg_function_active_cdi_2": {
+        "name": "Funksjon: Konfigurerbar DI2"
+      },
+      "function_reg_function_active_cdi_3": {
+        "name": "Funksjon: Konfigurerbar DI3"
+      },
+      "function_reg_sensor_di_cookerhood": {
+        "name": "Funksjon: Kjøkkenvifte (DI)"
+      },
+      "function_reg_sensor_di_vacuumcleaner": {
+        "name": "Funksjon: Støvsuger (DI)"
+      }
+    },
+    "switch": {
+      "eco_mode": {
+        "name": "ECO-modus"
+      },
+      "moisture_transfer": {
+        "name": "Fuktoverføring"
+      }
+    },
+    "select": {
+      "user_mode_select": {
+        "name": "Brukermodus",
+        "state": {
+          "auto": "Auto",
+          "manual": "Manuell"
+        }
+      }
+    },
+    "number": {
+      "reg_usermode_crowded_airflow_level_saf": {
+        "name": "Selskap tilluftviftenivå"
+      },
+      "reg_usermode_crowded_airflow_level_eaf": {
+        "name": "Selskap avtrekksviftenivå"
+      },
+      "reg_usermode_refresh_airflow_level_saf": {
+        "name": "Gjennomlufting tilluftviftenivå"
+      },
+      "reg_usermode_refresh_airflow_level_eaf": {
+        "name": "Gjennomlufting avtrekksviftenivå"
+      },
+      "reg_usermode_fireplace_airflow_level_saf": {
+        "name": "Peis tilluftviftenivå"
+      },
+      "reg_usermode_fireplace_airflow_level_eaf": {
+        "name": "Peis avtrekksviftenivå"
+      },
+      "reg_usermode_away_airflow_level_saf": {
+        "name": "Borte tilluftviftenivå"
+      },
+      "reg_usermode_away_airflow_level_eaf": {
+        "name": "Borte avtrekksviftenivå"
+      },
+      "reg_usermode_holiday_airflow_level_saf": {
+        "name": "Ferie tilluftviftenivå"
+      },
+      "reg_usermode_holiday_airflow_level_eaf": {
+        "name": "Ferie avtrekksviftenivå"
+      },
+      "reg_usermode_cookerhood_airflow_level_saf": {
+        "name": "Kjøkkenvifte tilluftviftenivå"
+      },
+      "reg_usermode_cookerhood_airflow_level_eaf": {
+        "name": "Kjøkkenvifte avtrekksviftenivå"
+      },
+      "reg_usermode_vacuumcleaner_airflow_level_saf": {
+        "name": "Støvsuger tilluftviftenivå"
+      },
+      "reg_usermode_vacuumcleaner_airflow_level_eaf": {
+        "name": "Støvsuger avtrekksviftenivå"
+      },
+      "reg_pressure_guard_airflow_level_saf": {
+        "name": "Trykkvakt tilluftviftenivå"
+      },
+      "reg_pressure_guard_airflow_level_eaf": {
+        "name": "Trykkvakt avtrekksviftenivå"
+      },
+      "reg_usermode_holiday_time": {
+        "name": "Feriemodus varighet"
+      },
+      "reg_usermode_away_time": {
+        "name": "Bortemodus varighet"
+      },
+      "reg_usermode_fireplace_time": {
+        "name": "Peismodus varighet"
+      },
+      "reg_usermode_refresh_time": {
+        "name": "Gjennomluftingsmodus varighet"
+      },
+      "reg_usermode_crowded_time": {
+        "name": "Selskapsmodus varighet"
+      }
+    }
+  },
+  "services": {
+    "set_away_mode": {
+      "name": "Sett bortemodus",
+      "description": "Aktiver bortemodus for en angitt varighet.",
+      "fields": {
+        "entity_id": {
+          "name": "Entitet",
+          "description": "Systemair-klimaentiteten."
+        },
+        "duration": {
+          "name": "Varighet",
+          "description": "Varighet i timer (1-72)."
+        }
+      }
+    },
+    "set_crowded_mode": {
+      "name": "Sett selskapsmodus",
+      "description": "Aktiver selskapsmodus for en angitt varighet.",
+      "fields": {
+        "entity_id": {
+          "name": "Entitet",
+          "description": "Systemair-klimaentiteten."
+        },
+        "duration": {
+          "name": "Varighet",
+          "description": "Varighet i timer (1-8)."
+        }
+      }
+    },
+    "set_fireplace_mode": {
+      "name": "Sett peismodus",
+      "description": "Aktiver peismodus for en angitt varighet.",
+      "fields": {
+        "entity_id": {
+          "name": "Entitet",
+          "description": "Systemair-klimaentiteten."
+        },
+        "duration": {
+          "name": "Varighet",
+          "description": "Varighet i minutter (1-60)."
+        }
+      }
+    },
+    "set_holiday_mode": {
+      "name": "Sett feriemodus",
+      "description": "Aktiver feriemodus for en angitt varighet.",
+      "fields": {
+        "entity_id": {
+          "name": "Entitet",
+          "description": "Systemair-klimaentiteten."
+        },
+        "duration": {
+          "name": "Varighet",
+          "description": "Varighet i dager (1-365)."
+        }
+      }
+    },
+    "set_refresh_mode": {
+      "name": "Sett gjennomluftingsmodus",
+      "description": "Aktiver gjennomluftingsmodus for en angitt varighet.",
+      "fields": {
+        "entity_id": {
+          "name": "Entitet",
+          "description": "Systemair-klimaentiteten."
+        },
+        "duration": {
+          "name": "Varighet",
+          "description": "Varighet i minutter (1-240)."
+        }
+      }
+    }
+  }
+}

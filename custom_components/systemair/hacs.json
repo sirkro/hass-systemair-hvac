@@ -1,0 +1,7 @@
+{
+  "name": "Systemair HVAC",
+  "render_readme": true,
+  "domains": ["climate", "sensor", "binary_sensor", "switch", "select", "number"],
+  "iot_class": "cloud_push",
+  "homeassistant": "2024.1.0"
+}

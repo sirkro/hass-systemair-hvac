@@ -1,0 +1,109 @@
+set_away_mode:
+  name: Set away mode
+  description: Activate away mode for a specified duration.
+  fields:
+    entity_id:
+      name: Entity
+      description: The Systemair climate entity.
+      required: true
+      selector:
+        entity:
+          integration: systemair
+          domain: climate
+    duration:
+      name: Duration (hours)
+      description: Duration in hours (1-72).
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 72
+          unit_of_measurement: hours
+
+set_crowded_mode:
+  name: Set crowded mode
+  description: Activate crowded mode for a specified duration.
+  fields:
+    entity_id:
+      name: Entity
+      description: The Systemair climate entity.
+      required: true
+      selector:
+        entity:
+          integration: systemair
+          domain: climate
+    duration:
+      name: Duration (hours)
+      description: Duration in hours (1-8).
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 8
+          unit_of_measurement: hours
+
+set_fireplace_mode:
+  name: Set fireplace mode
+  description: Activate fireplace mode for a specified duration.
+  fields:
+    entity_id:
+      name: Entity
+      description: The Systemair climate entity.
+      required: true
+      selector:
+        entity:
+          integration: systemair
+          domain: climate
+    duration:
+      name: Duration (minutes)
+      description: Duration in minutes (1-60).
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 60
+          unit_of_measurement: minutes
+
+set_holiday_mode:
+  name: Set holiday mode
+  description: Activate holiday mode for a specified duration.
+  fields:
+    entity_id:
+      name: Entity
+      description: The Systemair climate entity.
+      required: true
+      selector:
+        entity:
+          integration: systemair
+          domain: climate
+    duration:
+      name: Duration (days)
+      description: Duration in days (1-365).
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 365
+          unit_of_measurement: days
+
+set_refresh_mode:
+  name: Set refresh mode
+  description: Activate refresh mode for a specified duration.
+  fields:
+    entity_id:
+      name: Entity
+      description: The Systemair climate entity.
+      required: true
+      selector:
+        entity:
+          integration: systemair
+          domain: climate
+    duration:
+      name: Duration (minutes)
+      description: Duration in minutes (1-240).
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 240
+          unit_of_measurement: minutes
