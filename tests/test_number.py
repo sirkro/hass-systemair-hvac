@@ -37,6 +37,7 @@ class MockCoordinator:
     def __init__(self, data: SystemairData | None = None, connection_type: str = CONN_CLOUD):
         self.data = data
         self.connection_type = connection_type
+        self.last_update_success = True
         self.async_set_fan_level = AsyncMock()
         self.async_set_timed_mode_duration = AsyncMock()
 

@@ -20,6 +20,7 @@ class MockCoordinator:
 
     def __init__(self, data: SystemairData | None = None):
         self.data = data
+        self.last_update_success = True
         self.async_set_mode = AsyncMock()
 
     async def async_add_listener(self, *args, **kwargs):

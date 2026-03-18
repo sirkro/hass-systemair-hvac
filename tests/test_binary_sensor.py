@@ -33,6 +33,7 @@ class MockCoordinator:
     def __init__(self, data: SystemairData | None = None, connection_type: str = "cloud"):
         self.data = data
         self.connection_type = connection_type
+        self.last_update_success = True
 
     async def async_add_listener(self, *args, **kwargs):
         return lambda: None

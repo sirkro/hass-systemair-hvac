@@ -25,6 +25,7 @@ class MockCoordinator:
 
     def __init__(self, data: SystemairData | None = None):
         self.data = data
+        self.last_update_success = True
         self.async_set_eco_mode = AsyncMock()
         self.async_set_moisture_transfer = AsyncMock()
 
