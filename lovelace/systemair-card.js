@@ -61,7 +61,7 @@ const css = `
     border-bottom: 1px solid var(--sa-border);
   }
   .header-left { display: flex; align-items: center; gap: 10px; }
-  .header-icon { width: 36px; height: 36px; --mdc-icon-size: 36px; color: var(--sa-primary); }
+  .header-icon { width: 36px; height: 36px; flex-shrink: 0; }
   .header-title { font-size: 1rem; font-weight: 600; }
   .header-subtitle { font-size: 0.75rem; color: var(--sa-sub); margin-top: 1px; }
   .header-right { display: flex; align-items: center; gap: 8px; }
@@ -561,7 +561,40 @@ class SystemairCard extends HTMLElement {
       <ha-card class="card">
         <div class="header" id="header">
           <div class="header-left">
-            <ha-icon class="header-icon" icon="mdi:hvac"></ha-icon>
+            <svg class="header-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="var(--sa-primary,#004a87)">
+              <!-- Systemair spiral dot logo -->
+              <!-- Large dots – outer arc (bottom-left) -->
+              <circle cx="18" cy="72" r="8.5"/>
+              <circle cx="10" cy="52" r="7.5"/>
+              <circle cx="16" cy="32" r="7"/>
+              <circle cx="30" cy="16" r="6.5"/>
+              <circle cx="50" cy="9"  r="6"/>
+              <!-- Medium dots – middle arc -->
+              <circle cx="69" cy="14" r="5.2"/>
+              <circle cx="83" cy="28" r="4.6"/>
+              <circle cx="89" cy="46" r="4"/>
+              <circle cx="86" cy="64" r="3.5"/>
+              <!-- Inner arc (top-right, small dots) -->
+              <circle cx="74" cy="78" r="3"/>
+              <circle cx="58" cy="87" r="2.6"/>
+              <circle cx="41" cy="88" r="2.2"/>
+              <circle cx="26" cy="83" r="1.9"/>
+              <!-- Inner spiral continuation -->
+              <circle cx="36" cy="34" r="5.5"/>
+              <circle cx="52" cy="26" r="5"/>
+              <circle cx="67" cy="34" r="4.4"/>
+              <circle cx="74" cy="49" r="3.8"/>
+              <circle cx="70" cy="64" r="3.2"/>
+              <circle cx="57" cy="72" r="2.8"/>
+              <circle cx="43" cy="70" r="2.4"/>
+              <circle cx="34" cy="60" r="2.1"/>
+              <circle cx="33" cy="48" r="1.8"/>
+              <!-- Core -->
+              <circle cx="42" cy="43" r="4.2"/>
+              <circle cx="52" cy="44" r="3.2"/>
+              <circle cx="58" cy="53" r="2.6"/>
+              <circle cx="50" cy="58" r="2"/>
+            </svg>
             <div>
               <div class="header-title" id="header-title"></div>
               <div class="header-subtitle" id="header-subtitle"></div>
