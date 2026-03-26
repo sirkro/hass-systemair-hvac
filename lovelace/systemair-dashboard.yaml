@@ -1,0 +1,223 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Systemair HVAC — Lovelace Dashboard
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# HOW TO USE
+# ----------
+# Option A — Custom card (recommended):
+#   1. Copy lovelace/systemair-card.js to /config/www/systemair-card.js
+#   2. In HA → Settings → Dashboards → Resources → Add resource:
+#        URL:  /local/systemair-card.js
+#        Type: JavaScript module
+#   3. Add the `custom:systemair-card` card below to any dashboard.
+#
+# Option B — Standard cards (no JS required):
+#   Copy the "Standard cards fallback" section at the bottom of this file
+#   into your dashboard YAML directly.
+#
+# ENTITY ID PREFIX
+# ----------------
+# All entity IDs below assume the device was named "Systemair HVAC" during
+# setup, which produces the prefix "systemair". If your device has a different
+# name (e.g. "My HVAC") replace every "systemair" below with your actual prefix
+# (e.g. "my_hvac").
+#
+# To find your actual prefix, look in:
+#   Settings → Devices & Services → Systemair HVAC → Entities
+# ─────────────────────────────────────────────────────────────────────────────
+
+title: Systemair HVAC
+views:
+  - title: Ventilation
+    icon: mdi:hvac
+    path: systemair
+    cards:
+
+      # ── Custom card (requires systemair-card.js resource) ──────────────────
+      - type: custom:systemair-card
+        title: Systemair HVAC
+        entity: climate.systemair_hvac      # ← climate entity ID
+        name_prefix: systemair             # ← entity prefix (see above)
+        show_alarms: true
+        show_functions: true
+
+      # ─────────────────────────────────────────────────────────────────────
+      # Standard cards fallback (works without any custom JS)
+      # Use these if you prefer not to install the custom card resource.
+      # ─────────────────────────────────────────────────────────────────────
+
+      # ── Climate control ───────────────────────────────────────────────────
+      - type: thermostat
+        entity: climate.systemair_hvac
+        name: Systemair HVAC
+
+      # ── Air quality sensors ───────────────────────────────────────────────
+      - type: glance
+        title: Air Quality
+        show_name: true
+        show_icon: true
+        show_state: true
+        entities:
+          - entity: sensor.systemair_supply_air_temperature
+            name: Supply
+          - entity: sensor.systemair_outdoor_air_temperature
+            name: Outdoor
+          - entity: sensor.systemair_extract_air_temperature
+            name: Extract
+          - entity: sensor.systemair_humidity
+            name: Humidity
+          - entity: sensor.systemair_co2
+            name: CO₂
+
+      # ── Fan speed ─────────────────────────────────────────────────────────
+      - type: glance
+        title: Fan
+        show_name: true
+        show_icon: true
+        show_state: true
+        entities:
+          - entity: sensor.systemair_supply_air_fan_speed
+            name: Supply %
+            icon: mdi:fan
+          - entity: sensor.systemair_extract_air_fan_speed
+            name: Extract %
+            icon: mdi:fan
+          - entity: sensor.systemair_fan_mode
+            name: Mode
+            icon: mdi:fan-auto
+          - entity: sensor.systemair_user_mode
+            name: User mode
+            icon: mdi:cog
+
+      # ── Filter + timed mode remaining ─────────────────────────────────────
+      - type: glance
+        title: Status
+        entities:
+          - entity: sensor.systemair_filter_days_remaining
+            name: Filter days
+            icon: mdi:air-filter
+          - entity: sensor.systemair_timed_mode_remaining
+            name: Timed remaining
+            icon: mdi:timer-outline
+
+      # ── ECO mode toggle ───────────────────────────────────────────────────
+      - type: entities
+        title: Controls
+        entities:
+          - entity: switch.systemair_eco_mode
+            name: ECO mode
+            icon: mdi:leaf
+
+      # ── Timed mode buttons (call services with default durations) ─────────
+      - type: grid
+        title: Timed Modes
+        columns: 3
+        square: false
+        cards:
+          - type: button
+            name: Away
+            icon: mdi:home-export-outline
+            tap_action:
+              action: call-service
+              service: systemair.set_away_mode
+              service_data:
+                entry_id: climate.systemair_hvac   # used to identify the device
+                duration_hours: 8
+
+          - type: button
+            name: Crowded
+            icon: mdi:account-group
+            tap_action:
+              action: call-service
+              service: systemair.set_crowded_mode
+              service_data:
+                entry_id: climate.systemair_hvac
+                duration_hours: 4
+
+          - type: button
+            name: Refresh
+            icon: mdi:refresh
+            tap_action:
+              action: call-service
+              service: systemair.set_refresh_mode
+              service_data:
+                entry_id: climate.systemair_hvac
+                duration_minutes: 60
+
+          - type: button
+            name: Fireplace
+            icon: mdi:fireplace
+            tap_action:
+              action: call-service
+              service: systemair.set_fireplace_mode
+              service_data:
+                entry_id: climate.systemair_hvac
+                duration_minutes: 30
+
+          - type: button
+            name: Holiday
+            icon: mdi:beach
+            tap_action:
+              action: call-service
+              service: systemair.set_holiday_mode
+              service_data:
+                entry_id: climate.systemair_hvac
+                duration_days: 7
+
+      # ── Active functions ──────────────────────────────────────────────────
+      - type: entities
+        title: Active Functions
+        entities:
+          - entity: binary_sensor.systemair_function_reg_function_active_cooling
+            name: Cooling
+            icon: mdi:snowflake
+          - entity: binary_sensor.systemair_function_reg_function_active_heating
+            name: Heating
+            icon: mdi:radiator
+          - entity: binary_sensor.systemair_function_reg_function_active_heat_recovery
+            name: Heat recovery
+            icon: mdi:recycle
+          - entity: binary_sensor.systemair_function_reg_function_active_free_cooling
+            name: Free cooling
+            icon: mdi:fan
+          - entity: binary_sensor.systemair_function_reg_function_active_defrosting
+            name: Defrosting
+            icon: mdi:snowflake-melt
+          - entity: binary_sensor.systemair_function_reg_function_active_eco_mode
+            name: ECO mode active
+            icon: mdi:leaf
+          - entity: binary_sensor.systemair_function_reg_function_active_moisture_transfer
+            name: Moisture transfer
+            icon: mdi:water-sync
+          - entity: binary_sensor.systemair_function_reg_function_active_pressure_guard
+            name: Pressure guard
+            icon: mdi:gauge
+
+      # ── Alarms (disabled by default in HA — enable entities first) ────────
+      - type: entities
+        title: Alarms
+        entities:
+          - entity: binary_sensor.systemair_alarm_alarm_filter_state
+            name: Filter alarm
+            icon: mdi:air-filter
+          - entity: binary_sensor.systemair_alarm_alarm_filter_warning_state
+            name: Filter warning
+            icon: mdi:air-filter
+          - entity: binary_sensor.systemair_alarm_alarm_co2_state
+            name: CO₂ alarm
+            icon: mdi:molecule-co2
+          - entity: binary_sensor.systemair_alarm_alarm_frost_prot_state
+            name: Frost protection
+            icon: mdi:snowflake-alert
+          - entity: binary_sensor.systemair_alarm_alarm_fire_alarm_state
+            name: Fire alarm
+            icon: mdi:fire-alert
+          - entity: binary_sensor.systemair_alarm_alarm_overheat_temperature_state
+            name: Overheat temp
+            icon: mdi:thermometer-alert
+          - entity: binary_sensor.systemair_alarm_alarm_saf_rpm_state
+            name: Supply fan RPM alarm
+            icon: mdi:fan-alert
+          - entity: binary_sensor.systemair_alarm_alarm_eaf_rpm_state
+            name: Extract fan RPM alarm
+            icon: mdi:fan-alert
