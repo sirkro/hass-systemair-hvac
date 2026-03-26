@@ -534,6 +534,7 @@ class SystemairCard extends HTMLElement {
       filterDays, remainingMin,
       userModeName, fanModeName,
       ecoOn,
+      ecoEntityId,
       activeAlarms,
       activeFunctions,
     };
@@ -1011,11 +1012,9 @@ class SystemairCard extends HTMLElement {
   _toggleEco() {
     const d = this._data();
     if (!d) return;
-    const p = this._config.name_prefix;
-    const entityId = `switch.${eid(p, "eco_mode")}`;
-    if (!this._hass.states[entityId]) return;
+    if (!this._hass.states[d.ecoEntityId]) return;
     this._hass.callService("switch", d.ecoOn ? "turn_off" : "turn_on", {
-      entity_id: entityId,
+      entity_id: d.ecoEntityId,
     });
   }
 
