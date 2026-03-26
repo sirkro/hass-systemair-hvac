@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.3] - 2026-03-26
+
+### Added
+
+- Lovelace card (`lovelace/systemair-card.js`) with entity registry-based lookups (language-independent)
+- Lovelace card screenshot and usage documentation (`lovelace/README.md`)
+
+### Fixed
+
+- Lovelace card: entity lookups now use `hass.entities` registry (translation_key + device_id) instead of English slug guessing
+- Lovelace card: timed-mode services (e.g. `set_away_mode`) now send correct `entity_id` and `duration` parameters
+- Lovelace card: replaced `none` preset chip with Auto/Manual HVAC mode chips
+- Lovelace card: function/alarm friendly name stripping correctly handles device name prefix added by `_attr_has_entity_name = True`
+
 ## [0.9.2] - 2026-03-18
 
 ### Added
@@ -76,5 +90,7 @@ Custom Home Assistant integration for Systemair HVAC ventilation units via the S
 
 Based on the [Systemair Homey app](https://github.com/balmli/com.systemair) by [balmli](https://github.com/balmli), licensed under GPL-3.0.
 
+[0.9.3]: https://github.com/sirkro/hass-systemair-hvac/releases/tag/v0.9.3
+[0.9.2]: https://github.com/sirkro/hass-systemair-hvac/releases/tag/v0.9.2
 [0.9.1]: https://github.com/sirkro/hass-systemair-hvac/releases/tag/v0.9.1
 [0.9.0]: https://github.com/sirkro/hass-systemair-hvac/releases/tag/v0.9.0
